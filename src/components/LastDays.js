@@ -18,7 +18,7 @@ let xValue = (d) => d.date;
 let yValue = (d) => d.new_cases_smoothed;
 
 export let LastDays = ({ data, isoCode, width, height }) => {
-	let margin = { top: 0, right: 1, bottom: 30, left: 20 };
+	let margin = { top: 0, right: 1, bottom: 20, left: 25 };
 
 	let innerWidth = width - (margin.left + margin.right);
 	let innerHeight = height - (margin.top + margin.bottom);
@@ -69,14 +69,14 @@ export let LastDays = ({ data, isoCode, width, height }) => {
 				.tickSizeInner(-innerHeight + margin.bottom)
 				.tickPadding(5)
 				.ticks(innerWidth / 70)
-				.tickFormat(timeFormat("%d/%m/%y"));
+				.tickFormat(timeFormat("%d"));
 			xAxisG
 				.call(xAxis)
 				.selectAll("text")
 				.style("text-anchor", "middle")
-				.attr("dx", "-20px")
-				.attr("dy", "7px")
-				.attr("transform", "rotate(-25)");
+				.attr("dx", "0px")
+				.attr("dy", "10px")
+				.attr("transform", "rotate(0)");
 		}, []);
 		return <g transform={`translate(0,${innerHeight})`} ref={ref}></g>;
 	};
@@ -92,9 +92,9 @@ export let LastDays = ({ data, isoCode, width, height }) => {
 			yAxisG
 				.call(yAxis)
 				.selectAll("text")
-				.style("text-anchor", "middle")
-				.attr("dx", "-.5rem")
-				.attr("dy", ".30rem")
+				.style("text-anchor", "end")
+				.attr("dx", "-3px")
+				.attr("dy", "3px")
 				.attr("transform", "rotate(0)");
 		}, []);
 		return <g transform={`translate(${margin.left},0)`} ref={ref}></g>;

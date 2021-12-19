@@ -20,9 +20,15 @@ export let DayInfo = ({ data, isoCode }) => {
 
 	return (
 		<>
-			<p>Last Update: {dayFormat}</p>
-			<p>New Cases: {newCases}</p>
-			<p>New Deaths: {newDeaths}</p>
+			<div className="innerDay">
+				<p>Last Update: {dayFormat}</p>
+			</div>
+			<div className="innerCases">
+				<p>New Cases: {newCases}</p>
+			</div>
+			<div className="innerDeaths">
+				<p>New Deaths: {newDeaths}</p>
+			</div>
 		</>
 	);
 };

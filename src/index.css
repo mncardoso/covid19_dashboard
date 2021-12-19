@@ -16,8 +16,8 @@
 	/* Effect Stules */
 	--glowBlur: blur(10px);
 	/* Setings */
-	--border: 40px;
-	--margin: 20px;
+	--border: 5px;
+	--margin: 5px;
 	--pading: 20px;
 	/* Font Weight */
 	--thin: 100;
@@ -41,7 +41,7 @@ html {
 
 html,
 body {
-	background: white none repeat scroll 0% 0%;
+	background: var(--day) none repeat scroll 0% 0%;
 	color: var(--night);
 }
 
@@ -74,7 +74,7 @@ h2 {
 
 p {
 	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-size: 1.125rem;
+	font-size: 0.75rem;
 	font-weight: var(--extra-bold);
 	text-decoration: none;
 	margin: none;
@@ -82,7 +82,7 @@ p {
 
 a {
 	font-family: "M PLUS Rounded 1c", sans-serif;
-	font-size: 1.125rem;
+	font-size: 0.75rem;
 	font-weight: var(--extra-bold);
 	text-decoration: none;
 	margin: none;
@@ -92,11 +92,11 @@ a {
 
 .cont {
 	display: grid;
-	padding: var(--pading);
+	padding: var(--border);
 	width: 100vw;
 	height: 100vh;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 4fr 4fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 5fr 5fr 1fr;
 	gap: var(--margin);
 	justify-content: center;
 }
@@ -104,7 +104,6 @@ a {
 .inner {
 	grid-column: 1;
 	grid-row: 1;
-
 	display: flex;
 	justify-content: space-between;
 	flex-direction: row;
@@ -123,7 +122,7 @@ a {
 }
 
 .topBar {
-	grid-column: 1 / span 4;
+	grid-column: 1 / span 3;
 	grid-row: 1;
 	display: grid;
 	position: relative;
@@ -134,7 +133,7 @@ a {
 }
 
 .cases {
-	grid-column: 1 / span 3;
+	grid-column: 1 / span 2;
 	grid-row: 2 / span 2;
 	display: grid;
 	position: relative;
@@ -145,7 +144,7 @@ a {
 }
 
 .vaccination {
-	grid-column: 4;
+	grid-column: 3;
 	grid-row: 2;
 	display: grid;
 	position: relative;
@@ -156,7 +155,7 @@ a {
 }
 
 .lastDays {
-	grid-column: 4;
+	grid-column: 3;
 	grid-row: 3;
 	display: grid;
 	position: relative;
@@ -167,17 +166,45 @@ a {
 }
 
 .dayInfo {
-	grid-column: 1 / span 4;
+	grid-column: 1 / span 3;
 	grid-row: 4;
-	display: grid;
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: var(--margin);
+	justify-content: center;
+}
 
+.dayInfo p {
+	font-size: 0.75rem;
+}
+
+.innerDay {
+	grid-column: 1;
+	position: relative;
+	width: 100%;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
+.innerCases {
+	grid-column: 2;
+	width: 100%;
 	position: relative;
 	background-color: var(--day);
 	padding: var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
 }
-
+.innerDeaths {
+	grid-column: 3;
+	width: 100%;
+	position: relative;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
 /* Line Charts */
 
 .graph {
@@ -217,11 +244,20 @@ a {
 	stroke-linejoin: round;
 }
 
-.dangerLines path {
-	stroke: var(--night);
-	stroke-width: 2;
-	stroke-linecap: round;
-	stroke-linejoin: round;
+.dangerLines text {
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-size: 0.625rem;
+	font-weight: var(--extra-bold);
+	text-decoration: none;
+	margin: none;
+}
+
+.axis text {
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-size: 0.625rem;
+	font-weight: var(--extra-bold);
+	text-decoration: none;
+	margin: none;
 }
 
 /* Vaccination Chart */
@@ -246,9 +282,89 @@ a {
 }
 .arcLegend {
 	display: flex;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
 	justify-content: space-between;
 }
 .arcLegend p {
-	font-size: 0.75rem;
+	font-size: 0.625rem;
+	text-align: center;
+}
+
+/* Menu */
+
+@media (prefers-color-scheme: dark) {
+	body {
+		background: var(--night) none repeat scroll 0% 0%;
+		color: var(--day);
+	}
+
+	.legend {
+		background-color: var(--nightStep01);
+	}
+
+	.topBar {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+
+	.cases {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+
+	.vaccination {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+
+	.lastDays {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+
+	.innerDay {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+	.innerCases {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+	.innerDeaths {
+		background-color: var(--night);
+		border: 2px solid var(--nightStep01);
+	}
+	/* Line Charts */
+
+	.graph {
+		stroke: var(--dayStep01);
+	}
+
+	.graphGlow {
+		stroke: var(--dayStep01);
+		filter: var(--glowBlur);
+	}
+
+	.axis line {
+		stroke: rgba(217, 216, 253, 0.1);
+	}
+
+	.axis path {
+		stroke: var(--day);
+	}
+
+	.dangerLines line {
+		stroke: var(--dayStep04);
+	}
+
+	/* TODO Glow */
+
+	/* Vaccination Chart */
+
+	.arc {
+		fill: var(--dayStep01);
+	}
+	.arcGlow {
+		fill: var(--dayStep01);
+		filter: var(--glowBlur);
+	}
 }

@@ -4,8 +4,8 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 	let isoData = data[isoCode]["data"];
 
 	let margin = 60;
-	let sml = width > height ? width : height;
-	let radius = sml / 2 - margin;
+	let sml = width > height - margin ? width : height - margin;
+	let radius = sml / 3 - margin;
 
 	let population = data[isoCode]["population"];
 
@@ -93,18 +93,22 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 				/>
 			</svg>
 			<div className="arcLegend">
-				<p>
-					0: {percentage(vax0).toFixed(2)}% ({vax0})
-				</p>
-				<p>
-					1: {percentage(vax1).toFixed(2)}% ({vax1})
-				</p>
-				<p>
-					2: {percentage(vax2).toFixed(2)}% ({vax2})
-				</p>
-				<p>
-					3: {percentage(vax3).toFixed(2)}% ({vax3})
-				</p>
+				<div>
+					<p>0: {percentage(vax0).toFixed(2)}%</p>
+					<p>({vax0})</p>
+				</div>
+				<div>
+					<p>1: {percentage(vax1).toFixed(2)}%</p>
+					<p>({vax1})</p>
+				</div>
+				<div>
+					<p>2: {percentage(vax2).toFixed(2)}%</p>
+					<p>({vax2})</p>
+				</div>
+				<div>
+					<p>3: {percentage(vax3).toFixed(2)}%</p>
+					<p>({vax3})</p>
+				</div>
 			</div>
 		</div>
 	);

@@ -6,10 +6,10 @@ import { IsoMenu } from "./components/IsoMenu";
 import { LastDays } from "./components/LastDays";
 import { Vaccination } from "./components/Vaccination";
 
-let widthBig = (window.innerWidth - 180) * 0.75;
-let widthSml = window.innerWidth - 180 - widthBig;
-let heightBig = window.innerHeight - 380;
-let heightSml = (window.innerHeight - 400) * 0.5;
+let widthBig = ((window.innerWidth - 20) / 3) * 2 - 45;
+let widthSml = (window.innerWidth - 20) / 3 - 45;
+let heightBig = ((window.innerHeight - 25) / 12) * 10 - 45;
+let heightSml = ((window.innerHeight - 25) / 12) * 5 - 45;
 
 function App() {
 	let data = GetData();
@@ -23,7 +23,7 @@ function App() {
 			data={data}
 		/>
 	) : (
-		"Loading..."
+		<p>Loading...</p>
 	);
 
 	return data ? (
@@ -67,9 +67,7 @@ function App() {
 				</div>
 			</div>
 			<div className="dayInfo">
-				<div className="inner">
-					<DayInfo data={data} isoCode={isoCode} />
-				</div>
+				<DayInfo data={data} isoCode={isoCode} />
 			</div>
 		</div>
 	) : (
@@ -92,7 +90,15 @@ function App() {
 				<div className="inner"></div>
 			</div>
 			<div className="dayInfo">
-				<div className="inner"></div>
+				<div className="innerDay">
+					<p>Last Update:</p>
+				</div>
+				<div className="innerCases">
+					<p>New Cases:</p>
+				</div>
+				<div className="innerDeaths">
+					<p>New Deaths:</p>
+				</div>
 			</div>
 		</div>
 	);
