@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { CasesChart } from "./components/CasesChart";
 import { DayInfo } from "./components/DayInfo";
 import { GetData } from "./components/GetData";
 import { IsoMenu } from "./components/IsoMenu";
+import { LastDays } from "./components/LastDays";
 import { Vaccination } from "./components/Vaccination";
 
 let widthBig = (window.innerWidth - 180) * 0.75;
@@ -12,8 +14,6 @@ let heightSml = (window.innerHeight - 400) * 0.5;
 function App() {
 	let data = GetData();
 	let [isoCode, setIsoCode] = useState("OWID_WRL");
-	// let data[isoCode] = data ? data[isoCode] : null;
-	// let location = data ? data[isoCode]["location"] : "Loading";
 	let menu = data ? (
 		<IsoMenu
 			options={Object.keys(data)}
@@ -35,7 +35,14 @@ function App() {
 			</div>
 			<div className="cases">
 				<p className="legend">Covid Cases Smothed</p>
-				<div className="inner"></div>
+				<div className="inner">
+					<CasesChart
+						data={data}
+						isoCode={isoCode}
+						width={widthBig}
+						height={heightBig}
+					/>
+				</div>
 			</div>
 			<div className="vaccination">
 				<p className="legend">Vaccinations</p>
@@ -50,7 +57,14 @@ function App() {
 			</div>
 			<div className="lastDays">
 				<p className="legend">Last 14 days</p>
-				<div className="inner"></div>
+				<div className="inner">
+					<LastDays
+						data={data}
+						isoCode={isoCode}
+						width={widthSml}
+						height={heightSml}
+					/>
+				</div>
 			</div>
 			<div className="dayInfo">
 				<div className="inner">

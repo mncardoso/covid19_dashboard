@@ -176,6 +176,53 @@ a {
 	padding-top: 6px;
 }
 
+/* Line Charts */
+
+.graph {
+	fill: none;
+	stroke: var(--nightStep01);
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.graphGlow {
+	fill: none;
+	stroke: none;
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	filter: none;
+}
+
+.axis line {
+	stroke: rgba(3, 2, 39, 0.1);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.axis path {
+	stroke: var(--night);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.dangerLines line {
+	stroke: var(--night);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+.dangerLines path {
+	stroke: var(--night);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+/* Vaccination */
 .vax0 {
 	fill: rgba(0, 0, 0, 0.5);
 }
