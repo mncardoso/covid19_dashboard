@@ -36,8 +36,6 @@ export let LastDays = ({ data, isoCode, width, height }) => {
 	let minDay = min(day);
 	let maxDay = max(day);
 
-	console.log(day);
-
 	let casesWithDate = isoData.map(function (d, i) {
 		return {
 			date: day[i],
