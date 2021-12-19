@@ -11,7 +11,9 @@ export let IsoMenu = ({
 		defaultValue={selectedValue}
 	>
 		{options.map((d) => (
-			<option value={d}>{data[d]["location"]}</option>
+			<option key={d} value={d}>
+				{data[d]["location"]}
+			</option>
 		))}
 	</select>
 );

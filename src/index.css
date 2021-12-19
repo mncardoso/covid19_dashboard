@@ -88,6 +88,8 @@ a {
 	margin: none;
 }
 
+/* main */
+
 .cont {
 	display: grid;
 	padding: var(--pading);
@@ -97,6 +99,27 @@ a {
 	grid-template-rows: 1fr 4fr 4fr 1fr;
 	gap: var(--margin);
 	justify-content: center;
+}
+
+.inner {
+	grid-column: 1;
+	grid-row: 1;
+
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.legend {
+	width: 160px;
+	height: 30px;
+	position: absolute;
+	color: white;
+	background-color: var(--dayStep01);
+	font-size: 0.75rem;
+	border-radius: 3px 0px;
+	padding-left: 10px;
+	padding-top: 6px;
 }
 
 .topBar {
@@ -155,27 +178,6 @@ a {
 	border: 2px solid var(--dayStep01);
 }
 
-.inner {
-	grid-column: 1;
-	grid-row: 1;
-
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
-}
-
-.legend {
-	width: 160px;
-	height: 30px;
-	position: absolute;
-	color: white;
-	background-color: var(--dayStep01);
-	font-size: 0.75rem;
-	border-radius: 3px 0px;
-	padding-left: 10px;
-	padding-top: 6px;
-}
-
 /* Line Charts */
 
 .graph {
@@ -222,7 +224,7 @@ a {
 	stroke-linejoin: round;
 }
 
-/* Vaccination */
+/* Vaccination Chart */
 .vax0 {
 	fill: rgba(0, 0, 0, 0.5);
 }

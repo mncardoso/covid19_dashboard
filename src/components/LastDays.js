@@ -81,7 +81,7 @@ export let LastDays = ({ data, isoCode, width, height }) => {
 		return <g transform={`translate(0,${innerHeight})`} ref={ref}></g>;
 	};
 
-	let YAxis = ({ xScale, innerWidth, innerHeight, margin }) => {
+	let YAxis = ({ yScale, innerWidth, innerHeight, margin }) => {
 		let ref = useRef();
 		useEffect(() => {
 			let yAxisG = select(ref.current);
@@ -118,8 +118,14 @@ export let LastDays = ({ data, isoCode, width, height }) => {
 							margin={margin}
 						/>
 					</g>
-					<path className="graphGlow" d={lineGenerator(casesWithDate)} />
-					<path className="graph" d={lineGenerator(casesWithDate)} />
+					<path
+						className="graphGlow"
+						d={lineGenerator(casesWithDate.slice(0, 14))}
+					/>
+					<path
+						className="graph"
+						d={lineGenerator(casesWithDate.slice(0, 14))}
+					/>
 					<g className="dangerLines">
 						<text x={margin.left + 5} y={marker500 - 5}>
 							500 mark ({danger500})

@@ -81,7 +81,7 @@ export let CasesChart = ({ data, isoCode, width, height }) => {
 		return <g transform={`translate(0,${innerHeight})`} ref={ref}></g>;
 	};
 
-	let YAxis = ({ xScale, innerWidth, innerHeight, margin }) => {
+	let YAxis = ({ yScale, innerWidth, innerHeight, margin }) => {
 		let ref = useRef();
 		useEffect(() => {
 			let yAxisG = select(ref.current);

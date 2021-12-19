@@ -58,12 +58,12 @@ function App() {
 			<div className="lastDays">
 				<p className="legend">Last 14 days</p>
 				<div className="inner">
-					{/* <LastDays
+					<LastDays
 						data={data}
 						isoCode={isoCode}
 						width={widthSml}
 						height={heightSml}
-					/> */}
+					/>
 				</div>
 			</div>
 			<div className="dayInfo">
