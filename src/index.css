@@ -245,6 +245,7 @@ a {
 }
 
 .dangerLines text {
+	fill: var(--night);
 	font-family: "M PLUS Rounded 1c", sans-serif;
 	font-size: 0.625rem;
 	font-weight: var(--extra-bold);
@@ -252,7 +253,15 @@ a {
 	margin: none;
 }
 
+.dangerGlow {
+	stroke: none;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
 .axis text {
+	fill: var(--night);
 	font-family: "M PLUS Rounded 1c", sans-serif;
 	font-size: 0.625rem;
 	font-weight: var(--extra-bold);
@@ -352,10 +361,22 @@ a {
 		stroke: var(--day);
 	}
 
+	.axis text {
+		fill: var(--day);
+	}
+
 	.dangerLines line {
 		stroke: var(--dayStep04);
 	}
 
+	.dangerGlow line {
+		stroke: var(--dayStep04);
+		filter: var(--glowBlur);
+	}
+
+	.dangerLines text {
+		fill: var(--day);
+	}
 	/* TODO Glow */
 
 	/* Vaccination Chart */

@@ -120,6 +120,20 @@ export let CasesChart = ({ data, isoCode, width, height }) => {
 					</g>
 					<path className="graphGlow" d={lineGenerator(casesWithDate)} />
 					<path className="graph" d={lineGenerator(casesWithDate)} />
+					<g className="dangerGlow">
+						<line
+							x1={margin.left}
+							y1={marker500}
+							x2={innerWidth}
+							y2={marker500}
+						/>
+						<line
+							x1={margin.left}
+							y1={marker250}
+							x2={innerWidth}
+							y2={marker250}
+						/>
+					</g>
 					<g className="dangerLines">
 						<text x={margin.left + 5} y={marker500 - 5}>
 							500 mark ({danger500})
