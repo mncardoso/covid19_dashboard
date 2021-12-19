@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
+
+:root {
+	font-size: 16px;
+	/* Color Styles */
+	--day: #e5e5e5;
+	--night: #191919;
+	--dayStep01: #46c8f5;
+	--dayStep02: #8accff;
+	--dayStep03: #b8d1ff;
+	--dayStep04: #d9d8fd;
+	--nightStep01: #402cc2;
+	--nightStep02: #19248d;
+	--nightStep03: #011858;
+	--nightStep04: #030227;
+	/* Effect Stules */
+	--glowBlur: blur(10px);
+	/* Setings */
+	--border: 40px;
+	--margin: 20px;
+	--pading: 20px;
+	/* Font Weight */
+	--thin: 100;
+	--light: 300;
+	--regular: 400;
+	--medium: 500;
+	--bold: 700;
+	--extra-bold: 800;
+	--black: 900;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	background: white none repeat scroll 0% 0%;
+	color: var(--night);
+}
+
+body {
+	overflow: hidden;
+}
+
+span,
+p,
+a,
+button {
+	text-decoration: none;
+}
+
+h1 {
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-size: 4rem;
+	font-weight: var(--extra-bold);
+	text-decoration: none;
+	margin: none;
+}
+
+h2 {
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-size: 2.375rem;
+	font-weight: var(--extra-bold);
+	text-decoration: none;
+	margin: none;
+}
+
+p {
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-size: 1.125rem;
+	font-weight: var(--extra-bold);
+	text-decoration: none;
+	margin: none;
+}
+
+a {
+	font-family: "M PLUS Rounded 1c", sans-serif;
+	font-size: 1.125rem;
+	font-weight: var(--extra-bold);
+	text-decoration: none;
+	margin: none;
+}
+
+.cont {
+	display: grid;
+	padding: var(--pading);
+	width: 100vw;
+	height: 100vh;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 4fr 4fr 2fr;
+	gap: var(--margin);
+	justify-content: center;
+}
+
+.topBar {
+	grid-column: 1 / span 4;
+	grid-row: 1;
+	display: grid;
+	position: relative;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
+
+.cases {
+	grid-column: 1 / span 3;
+	grid-row: 2 / span 2;
+	display: grid;
+	position: relative;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
+
+.vaccination {
+	grid-column: 4;
+	grid-row: 2;
+	display: grid;
+	position: relative;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
+
+.lastDays {
+	grid-column: 4;
+	grid-row: 3;
+	display: grid;
+	position: relative;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
+
+.dayInfo {
+	grid-column: 1 / span 4;
+	grid-row: 4;
+	display: grid;
+
+	position: relative;
+	background-color: var(--day);
+	padding: var(--pading);
+	border-radius: 7px;
+	border: 2px solid var(--dayStep01);
+}
+
+.inner {
+	grid-column: 1;
+	grid-row: 1;
+
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+}
+
+.legend {
+	width: 160px;
+	height: 30px;
+	position: absolute;
+	color: white;
+	background-color: var(--dayStep01);
+	font-size: 0.75rem;
+	border-radius: 3px 0px;
+	padding-left: 10px;
+	padding-top: 6px;
+}
+
+.vax0 {
+	fill: rgba(0, 0, 0, 0.5);
+}
+.vax1 {
+	fill: rgba(78, 78, 78, 0.5);
+}
+.vax2 {
+	fill: rgba(162, 162, 162, 0.5);
+}
+.vax3 {
+	fill: rgba(255, 255, 255, 0.5);
+}
+.arc {
+	fill: var(--nightStep01);
+}
+.arcGlow {
+	fill: none;
+	filter: none;
+}
+.arcLegend {
+	display: flex;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	justify-content: space-between;
+}
+.arcLegend p {
+	font-size: 0.75rem;
+}
