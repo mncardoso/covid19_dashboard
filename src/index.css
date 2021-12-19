@@ -94,7 +94,7 @@ a {
 	width: 100vw;
 	height: 100vh;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 1fr 4fr 4fr 2fr;
+	grid-template-rows: 1fr 4fr 4fr 1fr;
 	gap: var(--margin);
 	justify-content: center;
 }
