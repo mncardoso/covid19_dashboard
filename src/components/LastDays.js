@@ -32,9 +32,11 @@ export let LastDays = ({ data, isoCode, width, height }) => {
 	let minVal = min(newCases) - min(newCases) * 0.01;
 	let maxVal = max(newCases) + max(newCases) * 0.01;
 
-	let day = isoData.map((d) => d["date"]).slice(-14);
+	let day = isoData.map((d) => parseDate(d["date"])).slice(-14);
 	let minDay = min(day);
 	let maxDay = max(day);
+
+	console.log(day);
 
 	let casesWithDate = isoData.map(function (d, i) {
 		return {

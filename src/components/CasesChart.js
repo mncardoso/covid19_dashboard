@@ -32,7 +32,7 @@ export let CasesChart = ({ data, isoCode, width, height }) => {
 	let minVal = min(newCases) - min(newCases) * 0.01;
 	let maxVal = max(newCases) + max(newCases) * 0.01;
 
-	let day = isoData.map((d) => d["date"]);
+	let day = isoData.map((d) => parseDate(d["date"]));
 	let minDay = min(day);
 	let maxDay = max(day);
 
