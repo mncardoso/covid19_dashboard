@@ -18,12 +18,11 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 	let dataVax3 = isoData.map((d) =>
 		!d["total_boosters"] ? 0 : d["total_boosters"]
 	);
-	let vax3 = dataVax3.slice(-1);
-	let vax2 = dataVax2.slice(-1) - vax3;
-	let vax1 = dataVax1.slice(-1) - vax2;
-	let vax0 = population - vax1;
+	let vax3 = max(dataVax3);
+	let vax2 = max(dataVax2) - max(dataVax3);
+	let vax1 = max(dataVax1) - max(dataVax2);
+	let vax0 = population - max(dataVax1);
 
-	console.log(vax1);
 	let percentage = scaleLinear().domain([0, population]).range([0, 100]);
 	let arcAngle = scaleLinear().domain([0, population]).range([0, 2]);
 
