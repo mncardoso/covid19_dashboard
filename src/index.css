@@ -96,7 +96,7 @@ a {
 	width: 100vw;
 	height: 100vh;
 	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 1fr 5fr 5fr 1fr;
+	grid-template-rows: 2rem 1fr 1fr 2rem;
 	gap: var(--margin);
 	justify-content: center;
 }
@@ -104,9 +104,7 @@ a {
 .inner {
 	grid-column: 1;
 	grid-row: 1;
-	display: flex;
-	justify-content: space-between;
-	flex-direction: row;
+	width: 100%;
 }
 
 .legend {
@@ -124,12 +122,35 @@ a {
 .topBar {
 	grid-column: 1 / span 3;
 	grid-row: 1;
-	display: grid;
-	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
 	background-color: var(--day);
-	padding: var(--pading);
+	padding-left: var(--pading);
+	padding-right: var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
+	align-items: center;
+	justify-content: space-between;
+}
+
+.menuBar {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+button {
+	background-color: var(--dayStep01);
+	border: none;
+	color: var(--day);
+	padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 50%;
+	font-size: 1rem;
 }
 
 .cases {
@@ -170,6 +191,7 @@ a {
 	grid-row: 4;
 	display: flex;
 	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
 	gap: var(--margin);
 	justify-content: center;
 }
@@ -179,31 +201,43 @@ a {
 }
 
 .innerDay {
+	display: flex;
 	grid-column: 1;
+	grid-row: 1;
 	position: relative;
 	width: 100%;
 	background-color: var(--day);
-	padding: var(--pading);
+	padding-left: var(--pading);
+	padding-right: var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
+	align-items: center;
 }
 .innerCases {
+	display: flex;
 	grid-column: 2;
+	grid-row: 1;
 	width: 100%;
 	position: relative;
 	background-color: var(--day);
-	padding: var(--pading);
+	padding-left: var(--pading);
+	padding-right: var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
+	align-items: center;
 }
 .innerDeaths {
+	display: flex;
 	grid-column: 3;
+	grid-row: 1;
 	width: 100%;
 	position: relative;
 	background-color: var(--day);
-	padding: var(--pading);
+	padding-left: var(--pading);
+	padding-right: var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
+	align-items: center;
 }
 /* Line Charts */
 
@@ -306,6 +340,11 @@ a {
 		color: var(--day);
 	}
 
+	button {
+		background-color: var(--nightStep01);
+		color: var(--day);
+	}
+
 	.legend {
 		background-color: var(--nightStep01);
 	}
@@ -342,6 +381,7 @@ a {
 		background-color: var(--night);
 		border: 2px solid var(--nightStep01);
 	}
+
 	/* Line Charts */
 
 	.graph {
@@ -387,5 +427,100 @@ a {
 	.arcGlow {
 		fill: var(--dayStep01);
 		filter: var(--glowBlur);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.cont {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 2rem 3fr 1fr 2rem;
+	}
+
+	.topBar {
+		grid-column: 1 / span 2;
+		grid-row: 1;
+	}
+
+	.cases {
+		grid-column: 1 / span 2;
+		grid-row: 2;
+	}
+
+	.vaccination {
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.lastDays {
+		grid-column: 2;
+		grid-row: 3;
+	}
+
+	.dayInfo {
+		grid-column: 1 / span 2;
+		grid-row: 4;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	.innerDay {
+		grid-column: 1;
+	}
+
+	.innerCases {
+		grid-column: 2;
+	}
+
+	.innerDeaths {
+		grid-column: 3;
+	}
+}
+
+@media screen and (max-width: 566px) {
+	.cont {
+		grid-template-columns: 1fr;
+		grid-template-rows: 2rem 5fr 3fr 3fr 1fr;
+	}
+
+	.topBar {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.cases {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.vaccination {
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.lastDays {
+		grid-column: 1;
+		grid-row: 4;
+	}
+
+	.dayInfo {
+		flex-direction: column;
+		grid-column: 1;
+		grid-row: 5;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+
+	.innerDay {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.innerCases {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.innerDeaths {
+		grid-column: 1;
+		grid-row: 3;
 	}
 }

@@ -1,11 +1,11 @@
-import { arc, min, max, scaleLinear } from "d3";
+import { arc, max, scaleLinear } from "d3";
 
 export let Vaccination = ({ data, width, height, isoCode }) => {
 	let isoData = data[isoCode]["data"];
 
 	let margin = 60;
-	let sml = min([width, height]);
-	let radius = sml / 3;
+	let sml = width > height - margin ? width : height - margin;
+	let radius = sml / 3 - margin;
 
 	let population = data[isoCode]["population"];
 
@@ -65,41 +65,45 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 		.startAngle(Math.PI * 0)
 		.endAngle(Math.PI * 2);
 
+	///
+
+	///
+
 	return (
 		<div>
-			<svg width={width} height={height}>
+			<svg width={width} height={height - margin}>
 				<path
 					className="arcGlow"
-					transform={`translate(${width / 2},${height / 2})`}
+					transform={`translate(${width / 2},${height / 2 - margin / 2})`}
 					d={arcFull()}
 				/>
 				<path
 					className="arc"
-					transform={`translate(${width / 2},${height / 2})`}
+					transform={`translate(${width / 2},${height / 2 - margin / 2})`}
 					d={arcFull()}
 				/>
 				<path
 					className="vax0"
-					transform={`translate(${width / 2},${height / 2})`}
+					transform={`translate(${width / 2},${height / 2 - margin / 2})`}
 					d={arcVax0()}
 				/>
 				<path
 					className="vax1"
-					transform={`translate(${width / 2},${height / 2})`}
+					transform={`translate(${width / 2},${height / 2 - margin / 2})`}
 					d={arcVax1()}
 				/>
 				<path
 					className="vax2"
-					transform={`translate(${width / 2},${height / 2})`}
+					transform={`translate(${width / 2},${height / 2 - margin / 2})`}
 					d={arcVax2()}
 				/>
 				<path
 					className="vax3"
-					transform={`translate(${width / 2},${height / 2})`}
+					transform={`translate(${width / 2},${height / 2 - margin / 2})`}
 					d={arcVax3()}
 				/>
 			</svg>
-			{/* <div className="arcLegend">
+			<div className="arcLegend">
 				<div>
 					<p>0: {percentage(vax0).toFixed(2)}%</p>
 					<p>({vax0})</p>
@@ -116,7 +120,7 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 					<p>3: {percentage(vax3).toFixed(2)}%</p>
 					<p>({vax3})</p>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

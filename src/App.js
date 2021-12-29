@@ -11,19 +11,28 @@ let widthSml = (window.innerWidth - 20) / 3 - 45;
 let heightBig = ((window.innerHeight - 25) / 12) * 10 - 45;
 let heightSml = ((window.innerHeight - 25) / 12) * 5 - 45;
 
+function refreshPage() {
+	window.location.reload(false);
+}
+
 function App() {
 	let data = GetData();
 	let [isoCode, setIsoCode] = useState("OWID_WRL");
 	let menu = data ? (
-		<IsoMenu
-			options={Object.keys(data)}
-			id="location-select"
-			selectedValue={isoCode}
-			onSelectedValueChange={setIsoCode}
-			data={data}
-		/>
+		<div className="menuBar">
+			<button onClick={refreshPage}>↺</button>
+			<IsoMenu
+				options={Object.keys(data)}
+				id="location-select"
+				selectedValue={isoCode}
+				onSelectedValueChange={setIsoCode}
+				data={data}
+			/>
+		</div>
 	) : (
-		<p>Loading...</p>
+		<div className="menu">
+			<p>Loading...</p>
+		</div>
 	);
 
 	return data ? (
@@ -35,34 +44,58 @@ function App() {
 			</div>
 			<div className="cases">
 				<p className="legend">Covid Cases Smothed</p>
-				<div className="inner">
+				<div className="inner" id="casesInner">
 					<CasesChart
 						data={data}
 						isoCode={isoCode}
-						width={widthBig}
-						height={heightBig}
+						width={
+							document.getElementById("casesInner").getBoundingClientRect()[
+								"width"
+							]
+						}
+						height={
+							document.getElementById("casesInner").getBoundingClientRect()[
+								"height"
+							]
+						}
 					/>
 				</div>
 			</div>
 			<div className="vaccination">
 				<p className="legend">Vaccinations</p>
-				<div className="inner">
+				<div className="inner" id="vaccinationInner">
 					<Vaccination
 						data={data}
 						isoCode={isoCode}
-						width={widthSml}
-						height={heightSml}
+						width={
+							document
+								.getElementById("vaccinationInner")
+								.getBoundingClientRect()["width"]
+						}
+						height={
+							document
+								.getElementById("vaccinationInner")
+								.getBoundingClientRect()["height"]
+						}
 					/>
 				</div>
 			</div>
 			<div className="lastDays">
 				<p className="legend">Last 14 days</p>
-				<div className="inner">
+				<div className="inner" id="lastDaysInner">
 					<LastDays
 						data={data}
 						isoCode={isoCode}
-						width={widthSml}
-						height={heightSml}
+						width={
+							document.getElementById("lastDaysInner").getBoundingClientRect()[
+								"width"
+							]
+						}
+						height={
+							document.getElementById("lastDaysInner").getBoundingClientRect()[
+								"height"
+							]
+						}
 					/>
 				</div>
 			</div>
@@ -79,15 +112,15 @@ function App() {
 			</div>
 			<div className="cases">
 				<p className="legend">Covid Cases Smothed</p>
-				<div className="inner"></div>
+				<div className="inner" id="casesInner"></div>
 			</div>
 			<div className="vaccination">
 				<p className="legend">Vaccinations</p>
-				<div className="inner"></div>
+				<div className="inner" id="vaccinationInner"></div>
 			</div>
 			<div className="lastDays">
 				<p className="legend">Last 14 days</p>
-				<div className="inner"></div>
+				<div className="inner" id="lastDaysInner"></div>
 			</div>
 			<div className="dayInfo">
 				<div className="innerDay">
