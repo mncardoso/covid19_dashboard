@@ -99,7 +99,7 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 					d={arcVax3()}
 				/>
 			</svg>
-			{/* <div className="arcLegend">
+			<div className="arcLegend">
 				<div>
 					<p>0: {percentage(vax0).toFixed(2)}%</p>
 					<p>({vax0})</p>
@@ -116,7 +116,7 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 					<p>3: {percentage(vax3).toFixed(2)}%</p>
 					<p>({vax3})</p>
 				</div>
-			</div> */}
+			</div>
 		</div>
 	);
 };

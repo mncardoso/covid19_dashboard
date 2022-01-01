@@ -56,7 +56,7 @@ function App() {
 						height={
 							document.getElementById("casesInner").getBoundingClientRect()[
 								"height"
-							]
+							] - 10
 						}
 					/>
 				</div>
@@ -75,7 +75,7 @@ function App() {
 						height={
 							document
 								.getElementById("vaccinationInner")
-								.getBoundingClientRect()["height"]
+								.getBoundingClientRect()["height"] - 10
 						}
 					/>
 				</div>
@@ -94,7 +94,7 @@ function App() {
 						height={
 							document.getElementById("lastDaysInner").getBoundingClientRect()[
 								"height"
-							]
+							] - 10
 						}
 					/>
 				</div>

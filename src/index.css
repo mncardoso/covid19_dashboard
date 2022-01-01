@@ -16,7 +16,7 @@
 	/* Effect Stules */
 	--glowBlur: blur(10px);
 	/* Setings */
-	--border: 5px;
+	--border: 20px;
 	--margin: 5px;
 	--pading: 20px;
 	/* Font Weight */
@@ -95,8 +95,8 @@ a {
 	padding: var(--border);
 	width: 100vw;
 	height: 100vh;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-template-rows: 2rem 1fr 1fr 2rem;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto repeat(2, 1fr) auto;
 	gap: var(--margin);
 	justify-content: center;
 }
@@ -126,8 +126,7 @@ a {
 	width: 100%;
 	height: 100%;
 	background-color: var(--day);
-	padding-left: var(--pading);
-	padding-right: var(--pading);
+	padding: calc(var(--pading) / 2) var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
 	align-items: center;
@@ -207,8 +206,7 @@ button {
 	position: relative;
 	width: 100%;
 	background-color: var(--day);
-	padding-left: var(--pading);
-	padding-right: var(--pading);
+	padding: calc(var(--pading) / 2) var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
 	align-items: center;
@@ -220,8 +218,7 @@ button {
 	width: 100%;
 	position: relative;
 	background-color: var(--day);
-	padding-left: var(--pading);
-	padding-right: var(--pading);
+	padding: calc(var(--pading) / 2) var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
 	align-items: center;
@@ -233,8 +230,7 @@ button {
 	width: 100%;
 	position: relative;
 	background-color: var(--day);
-	padding-left: var(--pading);
-	padding-right: var(--pading);
+	padding: calc(var(--pading) / 2) var(--pading);
 	border-radius: 7px;
 	border: 2px solid var(--dayStep01);
 	align-items: center;
@@ -324,12 +320,16 @@ button {
 	filter: none;
 }
 .arcLegend {
+	position: relative;
+	margin-top: -2rem;
+	/* width: 100%; */
 	display: flex;
 	justify-content: space-between;
 }
 .arcLegend p {
 	font-size: 0.625rem;
 	text-align: center;
+	/* margin: 0px 5px; */
 }
 
 /* Menu */
@@ -430,10 +430,10 @@ button {
 	}
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 810px) {
 	.cont {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 2rem 3fr 1fr 2rem;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto 2fr 1fr auto;
 	}
 
 	.topBar {
@@ -478,7 +478,7 @@ button {
 @media screen and (max-width: 566px) {
 	.cont {
 		grid-template-columns: 1fr;
-		grid-template-rows: 2rem 5fr 3fr 3fr 1fr;
+		grid-template-rows: auto auto 3fr 3fr;
 	}
 
 	.topBar {
@@ -489,22 +489,23 @@ button {
 	.cases {
 		grid-column: 1;
 		grid-row: 2;
+		display: none;
 	}
 
 	.vaccination {
 		grid-column: 1;
-		grid-row: 3;
+		grid-row: 4;
 	}
 
 	.lastDays {
 		grid-column: 1;
-		grid-row: 4;
+		grid-row: 3;
 	}
 
 	.dayInfo {
 		flex-direction: column;
 		grid-column: 1;
-		grid-row: 5;
+		grid-row: 2;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
 	}
@@ -522,5 +523,54 @@ button {
 	.innerDeaths {
 		grid-column: 1;
 		grid-row: 3;
+	}
+}
+
+@media screen and (max-height: 566px) {
+	.cont {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto 1fr;
+	}
+
+	.topBar {
+		grid-column: 1 / span 2;
+		grid-row: 1;
+	}
+
+	.cases {
+		grid-column: 1;
+		grid-row: 2;
+		display: none;
+	}
+
+	.vaccination {
+		grid-column: 1;
+		grid-row: 3;
+	}
+
+	.lastDays {
+		grid-column: 2;
+		grid-row: 3;
+	}
+
+	.dayInfo {
+		flex-direction: row;
+		grid-column: 1 / span 2;
+		grid-row: 2;
+	}
+
+	.innerDay {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.innerCases {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.innerDeaths {
+		grid-column: 3;
+		grid-row: 1;
 	}
 }

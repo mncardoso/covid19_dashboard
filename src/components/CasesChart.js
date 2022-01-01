@@ -27,7 +27,11 @@ export let CasesChart = ({ data, isoCode, width, height }) => {
 	let population = data[isoCode]["population"];
 
 	let newCases = isoData.map((d) =>
-		!d["new_cases_smoothed"] ? 0 : +d["new_cases_smoothed"]
+		!d["new_cases_smoothed"]
+			? 0
+			: +d["new_cases_smoothed"] < 0
+			? 0
+			: +d["new_cases_smoothed"]
 	);
 	let minVal = min(newCases) - min(newCases) * 0.01;
 	let maxVal = max(newCases) + max(newCases) * 0.01;
