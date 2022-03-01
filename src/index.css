@@ -1,25 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
 
 :root {
-	font-size: 16px;
-	/* Color Styles */
-	--day: #e5e5e5;
-	--night: #191919;
+	/* Colors */
+	--day: #e6e6e6;
+	--night: #1a1a1a;
+
 	--dayStep01: #46c8f5;
 	--dayStep02: #8accff;
 	--dayStep03: #b8d1ff;
 	--dayStep04: #d9d8fd;
+
 	--nightStep01: #402cc2;
 	--nightStep02: #19248d;
 	--nightStep03: #011858;
 	--nightStep04: #030227;
+
 	/* Effect Stules */
 	--glowBlur: blur(10px);
-	/* Setings */
-	--border: 20px;
-	--margin: 5px;
-	--pading: 20px;
-	/* Font Weight */
+
+	/* Margins */
+	--border: 0.6rem;
+	--margin: 0.2rem;
+	--pading: 0.6rem;
+	--borderRadius: 0.2rem;
+	--strokeBorder: 0.1rem;
+
+	/* Fonts */
+	font-size: 16px;
 	--thin: 100;
 	--light: 300;
 	--regular: 400;
@@ -108,15 +115,12 @@ a {
 }
 
 .legend {
-	width: 160px;
-	height: 30px;
 	position: absolute;
 	color: white;
 	background-color: var(--dayStep01);
 	font-size: 0.75rem;
-	border-radius: 3px 0px;
-	padding-left: 10px;
-	padding-top: 6px;
+	border-radius: calc(var(--borderRadius) - 2px) 0px var(--borderRadius) 0px;
+	padding: calc(var(--pading) / 6) var(--pading);
 }
 
 .topBar {
@@ -127,8 +131,8 @@ a {
 	height: 100%;
 	background-color: var(--day);
 	padding: calc(var(--pading) / 2) var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 	align-items: center;
 	justify-content: space-between;
 }
@@ -148,7 +152,7 @@ button {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	border-radius: 50%;
+	border-radius: var(--borderRadius);
 	font-size: 1rem;
 }
 
@@ -159,8 +163,8 @@ button {
 	position: relative;
 	background-color: var(--day);
 	padding: var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 }
 
 .vaccination {
@@ -170,8 +174,8 @@ button {
 	position: relative;
 	background-color: var(--day);
 	padding: var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 }
 
 .lastDays {
@@ -181,8 +185,8 @@ button {
 	position: relative;
 	background-color: var(--day);
 	padding: var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 }
 
 .dayInfo {
@@ -207,8 +211,8 @@ button {
 	width: 100%;
 	background-color: var(--day);
 	padding: calc(var(--pading) / 2) var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 	align-items: center;
 }
 .innerCases {
@@ -219,8 +223,8 @@ button {
 	position: relative;
 	background-color: var(--day);
 	padding: calc(var(--pading) / 2) var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 	align-items: center;
 }
 .innerDeaths {
@@ -231,8 +235,8 @@ button {
 	position: relative;
 	background-color: var(--day);
 	padding: calc(var(--pading) / 2) var(--pading);
-	border-radius: 7px;
-	border: 2px solid var(--dayStep01);
+	border-radius: var(--borderRadius);
+	border: var(--strokeBorder) solid var(--dayStep01);
 	align-items: center;
 }
 /* Line Charts */
@@ -320,16 +324,50 @@ button {
 	filter: none;
 }
 .arcLegend {
-	position: relative;
-	margin-top: -2rem;
-	/* width: 100%; */
+	position: absolute;
+	width: calc(100% - var(--pading) * 2);
+	top: calc(50% - 2.7rem);
 	display: flex;
-	justify-content: space-between;
+}
+.arcLegendArea {
+	margin: auto;
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: var(--gap);
+	justify-content: center;
+	align-content: center;
+	background-color: var(--nightStep01);
+	border-radius: var(--borderRadius);
+	/* padding: var(--margin); */
 }
 .arcLegend p {
 	font-size: 0.625rem;
 	text-align: center;
-	/* margin: 0px 5px; */
+}
+
+#vaxLegend0 {
+	padding: var(--margin);
+	border-radius: var(--borderRadius);
+	background-color: rgba(0, 0, 0, 0.5);
+	color: var(--day);
+}
+#vaxLegend1 {
+	padding: var(--margin);
+	border-radius: var(--borderRadius);
+	background-color: rgba(78, 78, 78, 0.5);
+	color: var(--day);
+}
+#vaxLegend2 {
+	padding: var(--margin);
+	border-radius: var(--borderRadius);
+	background-color: rgba(162, 162, 162, 0.5);
+	color: var(--day);
+}
+#vaxLegend3 {
+	padding: var(--margin);
+	border-radius: var(--borderRadius);
+	background-color: rgba(255, 255, 255, 0.5);
+	color: var(--night);
 }
 
 /* Menu */
@@ -351,35 +389,35 @@ button {
 
 	.topBar {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 
 	.cases {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 
 	.vaccination {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 
 	.lastDays {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 
 	.innerDay {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 	.innerCases {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 	.innerDeaths {
 		background-color: var(--night);
-		border: 2px solid var(--nightStep01);
+		border: var(--strokeBorder) solid var(--nightStep01);
 	}
 
 	/* Line Charts */
@@ -427,6 +465,21 @@ button {
 	.arcGlow {
 		fill: var(--dayStep01);
 		filter: var(--glowBlur);
+	}
+	.arcLegendArea {
+		background-color: var(--dayStep01);
+	}
+	#vaxLegend0 {
+		color: var(--day);
+	}
+	#vaxLegend1 {
+		color: var(--day);
+	}
+	#vaxLegend2 {
+		color: var(--night);
+	}
+	#vaxLegend3 {
+		color: var(--night);
 	}
 }
 

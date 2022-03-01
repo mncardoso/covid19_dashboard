@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { CasesChart } from "./components/CasesChart";
 import { DayInfo } from "./components/DayInfo";
 import { GetData } from "./components/GetData";
@@ -34,6 +35,11 @@ function App() {
 			<p>Loading...</p>
 		</div>
 	);
+
+	// let { search } = useLocation();
+	// let { searchParams } = new URLSearchParams(search);
+	// let code = searchParams.get("iso");
+	// console.log(searchParams);
 
 	return data ? (
 		<div className="cont">

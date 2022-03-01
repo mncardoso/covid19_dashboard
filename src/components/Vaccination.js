@@ -3,9 +3,8 @@ import { arc, min, max, scaleLinear } from "d3";
 export let Vaccination = ({ data, width, height, isoCode }) => {
 	let isoData = data[isoCode]["data"];
 
-	let margin = 60;
 	let sml = min([width, height]);
-	let radius = sml / 3;
+	let radius = sml / 2.1;
 
 	let population = data[isoCode]["population"];
 
@@ -100,21 +99,23 @@ export let Vaccination = ({ data, width, height, isoCode }) => {
 				/>
 			</svg>
 			<div className="arcLegend">
-				<div>
-					<p>0: {percentage(vax0).toFixed(2)}%</p>
-					<p>({vax0})</p>
-				</div>
-				<div>
-					<p>1: {percentage(vax1).toFixed(2)}%</p>
-					<p>({vax1})</p>
-				</div>
-				<div>
-					<p>2: {percentage(vax2).toFixed(2)}%</p>
-					<p>({vax2})</p>
-				</div>
-				<div>
-					<p>3: {percentage(vax3).toFixed(2)}%</p>
-					<p>({vax3})</p>
+				<div className="arcLegendArea">
+					<div id="vaxLegend3">
+						<p>3 vax</p>
+						<p>{percentage(vax3).toFixed(2)}%</p>
+					</div>
+					<div id="vaxLegend0">
+						<p>0 vax</p>
+						<p>{percentage(vax0).toFixed(2)}%</p>
+					</div>
+					<div id="vaxLegend2">
+						<p>2 vax</p>
+						<p>{percentage(vax2).toFixed(2)}%</p>
+					</div>
+					<div id="vaxLegend1">
+						<p>1 vax</p>
+						<p>{percentage(vax1).toFixed(2)}%</p>
+					</div>
 				</div>
 			</div>
 		</div>
