@@ -1,143 +1,183 @@
-import { useState } from "react";
-import { useLocation } from "react-router-dom";
-import { CasesChart } from "./components/CasesChart";
-import { DayInfo } from "./components/DayInfo";
+import { Link, Routes, Route } from "react-router-dom";
+import { createUseStyles } from "react-jss";
+import { IcoLogo } from "./svg/IcoLogo.js";
+import { IcoInfo } from "./svg/IcoInfo.js";
+import { IcoHome } from "./svg/IcoHome.js";
+import { Home } from "./components/Home";
+import { Info } from "./components/Info";
+import { Loading } from "./components/Loading";
 import { GetData } from "./components/GetData";
-import { IsoMenu } from "./components/IsoMenu";
-import { LastDays } from "./components/LastDays";
-import { Vaccination } from "./components/Vaccination";
 
-let widthBig = ((window.innerWidth - 20) / 3) * 2 - 45;
-let widthSml = (window.innerWidth - 20) / 3 - 45;
-let heightBig = ((window.innerHeight - 25) / 12) * 10 - 45;
-let heightSml = ((window.innerHeight - 25) / 12) * 5 - 45;
+// css builder
+const useStyles = createUseStyles((theme) => ({
+	"@global *": {
+		boxSizing: "border-box",
+		margin: "0",
+		padding: "0",
+		fontSize: theme.settings.fontSize,
+	},
 
-function refreshPage() {
-	window.location.reload(false);
-}
+	"@global html": {
+		scrollBehavior: "smooth",
+	},
 
-function App() {
+	"@global body": {
+		height: "100vh",
+		overflow: "hidden",
+		color: theme.palette.text,
+	},
+
+	"@global h1": {
+		fontFamily: "'Montserrat', sans-serif",
+		fontSize: "2rem",
+		fontWeight: theme.fontWeight.Bold,
+		textDecoration: "none",
+		margin: "none",
+	},
+
+	"@global h2": {
+		fontFamily: "'Montserrat', sans-serif",
+		fontSize: "1rem",
+		fontWeight: theme.fontWeight.Bold,
+		textDecoration: "none",
+		margin: "none",
+	},
+
+	"@global h3": {
+		fontFamily: "'Montserrat', sans-serif",
+		fontSize: "1.5rem",
+		fontWeight: theme.fontWeight.Bold,
+		textDecoration: "none",
+		margin: "none",
+	},
+
+	"@global p": {
+		fontFamily: "'Montserrat', sans-serif",
+		fontSize: "0.75rem",
+		fontWeight: theme.fontWeight.Medium,
+		textDecoration: "none",
+		margin: "none",
+	},
+
+	a: {
+		fontFamily: "'Montserrat', sans-serif",
+		fontSize: "0.75rem",
+		fontWeight: theme.fontWeight.Medium,
+		textDecoration: "none",
+		margin: "none",
+		"&:link": { color: theme.palette.text },
+		"&:visited": { color: theme.palette.text },
+		"&:hover": {
+			color: theme.palette.text,
+			textDecoration: "underline",
+		},
+		"&:active": {
+			color: theme.palette.text,
+			textDecoration: "underline",
+		},
+	},
+	"@global span": {
+		textDecoration: "none",
+	},
+	App: {
+		textAlign: "center",
+		backgroundColor: theme.palette.background,
+		minHeight: window.innerHeight,
+		display: "grid",
+		gridTemplateColumns: "96px 1fr",
+		alignItems: "center",
+		justifyContent: "center",
+		color: theme.palette.text,
+	},
+	Menu: {
+		display: "grid",
+		gridColumn: "1",
+		gridTemplateRows: "79px 1fr",
+		gap: "1rem",
+		height: "100vh",
+		padding: "1.5rem 2rem 1.5rem 2rem",
+		background: theme.palette.foreground,
+		"& nav": {
+			height: "100%",
+			display: "flex",
+			flexDirection: "column",
+			justifyContent: "space-between",
+		},
+		"& ul": {
+			listStyleType: "none",
+			display: "flex",
+			flexDirection: "column",
+			gap: "1rem",
+		},
+	},
+	Main: {
+		gridColumn: "2",
+	},
+	AppLink: {
+		color: theme.palette.text,
+	},
+}));
+
+function App(props) {
+	const classes = useStyles(props);
+
 	let data = GetData();
-	let [isoCode, setIsoCode] = useState("OWID_WRL");
-	let menu = data ? (
-		<div className="menuBar">
-			<button onClick={refreshPage}>↺</button>
-			<IsoMenu
-				options={Object.keys(data)}
-				id="location-select"
-				selectedValue={isoCode}
-				onSelectedValueChange={setIsoCode}
-				data={data}
-			/>
-		</div>
-	) : (
-		<div className="menu">
-			<p>Loading...</p>
-		</div>
-	);
-
-	// let { search } = useLocation();
-	// let { searchParams } = new URLSearchParams(search);
-	// let code = searchParams.get("iso");
-	// console.log(searchParams);
 
 	return data ? (
-		<div className="cont">
-			<div className="topBar">
-				<div className="inner">
-					<div>{menu}</div>
-				</div>
-			</div>
-			<div className="cases">
-				<p className="legend">Covid Cases Smothed</p>
-				<div className="inner" id="casesInner">
-					<CasesChart
-						data={data}
-						isoCode={isoCode}
-						width={
-							document.getElementById("casesInner").getBoundingClientRect()[
-								"width"
-							]
-						}
-						height={
-							document.getElementById("casesInner").getBoundingClientRect()[
-								"height"
-							] - 10
-						}
-					/>
-				</div>
-			</div>
-			<div className="vaccination">
-				<p className="legend">Vaccinations</p>
-				<div className="inner" id="vaccinationInner">
-					<Vaccination
-						data={data}
-						isoCode={isoCode}
-						width={
-							document
-								.getElementById("vaccinationInner")
-								.getBoundingClientRect()["width"]
-						}
-						height={
-							document
-								.getElementById("vaccinationInner")
-								.getBoundingClientRect()["height"] - 10
-						}
-					/>
-				</div>
-			</div>
-			<div className="lastDays">
-				<p className="legend">Last 14 days</p>
-				<div className="inner" id="lastDaysInner">
-					<LastDays
-						data={data}
-						isoCode={isoCode}
-						width={
-							document.getElementById("lastDaysInner").getBoundingClientRect()[
-								"width"
-							]
-						}
-						height={
-							document.getElementById("lastDaysInner").getBoundingClientRect()[
-								"height"
-							] - 10
-						}
-					/>
-				</div>
-			</div>
-			<div className="dayInfo">
-				<DayInfo data={data} isoCode={isoCode} />
+		<div className={classes.App}>
+			<menu className={classes.Menu}>
+				<IcoLogo />
+				<nav>
+					<ul>
+						<li>
+							<Link to="/">
+								<IcoHome />
+							</Link>
+						</li>
+					</ul>
+					<ul>
+						<li className={classes.Info}>
+							<Link to="/info">
+								<IcoInfo />
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			</menu>
+			<div className={classes.Main}>
+				<Routes>
+					<Route path="/" element={<Home data={data} />}></Route>
+					{/* <Route path="/" element={<Loading />}></Route> */}
+					<Route path="/info" element={<Info />}></Route>
+				</Routes>
 			</div>
 		</div>
 	) : (
-		<div className="cont">
-			<div className="topBar">
-				<div className="inner">
-					<div>{menu}</div>
-				</div>
-			</div>
-			<div className="cases">
-				<p className="legend">Covid Cases Smothed</p>
-				<div className="inner" id="casesInner"></div>
-			</div>
-			<div className="vaccination">
-				<p className="legend">Vaccinations</p>
-				<div className="inner" id="vaccinationInner"></div>
-			</div>
-			<div className="lastDays">
-				<p className="legend">Last 14 days</p>
-				<div className="inner" id="lastDaysInner"></div>
-			</div>
-			<div className="dayInfo">
-				<div className="innerDay">
-					<p>Last Update:</p>
-				</div>
-				<div className="innerCases">
-					<p>New Cases:</p>
-				</div>
-				<div className="innerDeaths">
-					<p>New Deaths:</p>
-				</div>
+		<div className={classes.App}>
+			<menu className={classes.Menu}>
+				<IcoLogo />
+				<nav>
+					<ul>
+						<li>
+							<Link to="/">
+								<IcoHome />
+							</Link>
+						</li>
+					</ul>
+					<ul>
+						<li className={classes.Info}>
+							<Link to="/info">
+								<IcoInfo />
+							</Link>
+						</li>
+					</ul>
+				</nav>
+			</menu>
+			<div className={classes.Main}>
+				<Routes>
+					<Route path="/" element={<Loading />}></Route>
+					<Route path="/info" element={<Info />}></Route>
+				</Routes>
 			</div>
 		</div>
 	);
