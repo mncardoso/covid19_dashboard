@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d0963c34-2ff4-4eef-b0b4-8368ad6cb9df/deploy-status)](https://app.netlify.com/sites/covid-dashboard-app/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
