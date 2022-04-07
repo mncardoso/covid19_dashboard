@@ -87,34 +87,34 @@ export let Loading = ({ props }) => {
 			<div id="CasesChart" className={classes.Section}>
 				<h2>Covid Cases</h2>
 				<div className={classes.Temp}>
-					<h1>
+					<h2>
 						Please be patient there is a lot of data being gathered, and there
 						will be a graph here when the data arrives
-					</h1>
+					</h2>
 				</div>
 			</div>
 			<div id="LastDays" className={classes.Section}>
 				<h2>Last 14 days</h2>
 				<div className={classes.Temp}>
-					<h1>This graph will be small</h1>
+					<h2>This graph will be small</h2>
 				</div>
 			</div>
 			<div id="Vaccinations" className={classes.Section}>
 				<h2>Vaccinations</h2>
 				<div id="DivVaccinations" className={classes.Temp}>
-					<h1>If people are vaccinated you won't see too much red</h1>
+					<h2>If people are vaccinated you won't see too much red</h2>
 				</div>
 			</div>
 			<div id="DeathsChart" className={classes.Section}>
 				<h2>Covid Deaths</h2>
 				<div className={classes.Temp}>
-					<h1>This is the grim graph</h1>
+					<h2>This is the grim graph</h2>
 				</div>
 			</div>
 			<div id="CovidStats" className={classes.Section}>
 				<h2>Covid Stats</h2>
 				<div className={classes.Temp}>
-					<h1>Just some data to keep you informed</h1>
+					<h2>Just some data to keep you informed</h2>
 				</div>
 			</div>
 		</div>
