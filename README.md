@@ -16,6 +16,6 @@ Runs the app in the development mode.
 
 Builds the app for production to the `./build` folder.
 
-This is being deployed to [Netlify](https://www.netlify.com/).
+This is being deployed to [Netlify](https://www.netlify.com/), but on a diferente reposotory because the "get" command is not working.
 
 [Deployed website](https://covid-dashboard.app/)
