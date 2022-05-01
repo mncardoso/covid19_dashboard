@@ -1,25 +1,7 @@
 import { max, scaleLinear } from "d3";
-import { createUseStyles } from "react-jss";
+import styles from "../../styles/graphql/Vaccinations.module.css";
 
-// css builder
-const useStyles = createUseStyles((theme) => ({
-	Data: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "space-between",
-	},
-	Title: {
-		display: "flex",
-		justifyContent: "space-between",
-	},
-	RedBG: { fill: theme.effect.secundary },
-	RedFG: { fill: theme.palette.secundary },
-	BlueBG: { fill: theme.effect.primary },
-	BlueFG: { fill: theme.palette.primary },
-}));
-
-export let Vaccinations = ({ data, width, isoCode, props }) => {
-	const classes = useStyles(props);
+export let Vaccinations = ({ data, width, isoCode }) => {
 	let isoData = data[isoCode]["data"];
 	let population = data[isoCode]["population"];
 	let dataVax1 = isoData.map((d) =>
@@ -51,9 +33,9 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 	let barHeight = 16;
 
 	return (
-		<div className={classes.Data}>
+		<div className={styles.data}>
 			<div>
-				<div className={classes.Title}>
+				<div className={styles.title}>
 					<p>0 Vaccines</p>
 					<p>{percentage(vaccinationNum.zero).toFixed(2)}%</p>
 				</div>
@@ -65,7 +47,7 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={width}
 						height={barHeight}
-						className={classes.RedBG}
+						className={styles.red_bg}
 					/>
 					<rect
 						x="0"
@@ -74,12 +56,12 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={vaccinationWidth.zero}
 						height={barHeight}
-						className={classes.RedFG}
+						className={styles.red_fg}
 					/>
 				</svg>
 			</div>
 			<div>
-				<div className={classes.Title}>
+				<div className={styles.title}>
 					<p>1 Vaccine</p>
 					<p>{percentage(vaccinationNum.one).toFixed(2)}%</p>
 				</div>
@@ -91,7 +73,7 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={width}
 						height={barHeight}
-						className={classes.BlueBG}
+						className={styles.blue_bg}
 					/>
 					<rect
 						x="0"
@@ -100,12 +82,12 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={vaccinationWidth.one}
 						height={barHeight}
-						className={classes.BlueFG}
+						className={styles.blue_fg}
 					/>
 				</svg>
 			</div>
 			<div>
-				<div className={classes.Title}>
+				<div className={styles.title}>
 					<p>2 Vaccines</p>
 					<p>{percentage(vaccinationNum.two).toFixed(2)}%</p>
 				</div>
@@ -117,7 +99,7 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={width}
 						height={barHeight}
-						className={classes.BlueBG}
+						className={styles.blue_bg}
 					/>
 					<rect
 						x="0"
@@ -126,12 +108,12 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={vaccinationWidth.two}
 						height={barHeight}
-						className={classes.BlueFG}
+						className={styles.blue_fg}
 					/>
 				</svg>
 			</div>
 			<div>
-				<div className={classes.Title}>
+				<div className={styles.title}>
 					<p>3 Vaccines</p>
 					<p>{percentage(vaccinationNum.three).toFixed(2)}%</p>
 				</div>
@@ -143,7 +125,7 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={width}
 						height={barHeight}
-						className={classes.BlueBG}
+						className={styles.blue_bg}
 					/>
 					<rect
 						x="0"
@@ -152,7 +134,7 @@ export let Vaccinations = ({ data, width, isoCode, props }) => {
 						ry="8px"
 						width={vaccinationWidth.three}
 						height={barHeight}
-						className={classes.BlueFG}
+						className={styles.blue_fg}
 					/>
 				</svg>
 			</div>

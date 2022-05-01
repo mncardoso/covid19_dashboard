@@ -1,0 +1,48 @@
+.cases_sub {
+	fill: none;
+	stroke: var(--color-primary-alpha);
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.cases_main {
+	fill: none;
+	stroke: var(--color-primary);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.cases_sub_red {
+	fill: none;
+	stroke: var(--color-secundary-alpha);
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.cases_main_red {
+	fill: none;
+	stroke: var(--color-secundary);
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.axis line {
+	stroke: hsla(0, 0%, 100%, 0.1);
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.axis path {
+	stroke: none;
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+.axis text {
+	fill: var(--color-text);
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.75rem;
+	font-weight: var(--font-regular);
+	text-decoration: none;
+	margin: none;
+	text-anchor: left;
+}

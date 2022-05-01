@@ -1,0 +1,15 @@
+.data {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.title h3 {
+	color: var(--color-secundary);
+}
+
+.new {
+	display: grid;
+	grid-template-columns: "1fr 1fr";
+}

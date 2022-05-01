@@ -1,0 +1,21 @@
+.data {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.title {
+	display: flex;
+	justify-content: space-between;
+}
+.red_bg {
+	fill: var(--color-secundary-alpha);
+}
+.red_fg {
+	fill: var(--color-secundary);
+}
+.blue_bg {
+	fill: var(--color-primary-alpha);
+}
+.blue_fg {
+	fill: var(--color-primary);
+}

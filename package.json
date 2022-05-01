@@ -1,42 +1,39 @@
 {
-  "name": "dashboard_covid19",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^14.0.4",
-    "d3": "^7.4.2",
-    "normalize.css": "^8.0.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-jss": "^10.9.0",
-    "react-router-dom": "^6.3.0",
-    "react-scripts": "^5.0.0",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "covid19_dashboard",
+	"version": "2.0.0",
+	"description": "Covid-19 Dashboard build on React, Next.js and D3.js",
+	"private": false,
+	"scripts": {
+		"dev": "cross-env AUTOPREFIXER_GRID=autoplace next dev",
+		"build": "cross-env AUTOPREFIXER_GRID=autoplace next build",
+		"start": "next start",
+		"lint": "next lint",
+		"export": "npm run build && next export"
+	},
+	"dependencies": {
+		"d3": "^7.4.4",
+		"next": "12.1.5",
+		"normalize.css": "^8.0.1",
+		"react": "18.1.0",
+		"react-dom": "18.1.0"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.5",
+		"cross-env": "^7.0.3",
+		"eslint": "8.14.0",
+		"eslint-config-next": "12.1.5"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 6 chrome version",
+			"last 6 firefox version",
+			"last 6 safari version",
+			"last 1 ie version"
+		]
+	}
 }

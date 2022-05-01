@@ -11,76 +11,12 @@ import {
 	select,
 } from "d3";
 import { useEffect, useRef } from "react";
-import { createUseStyles } from "react-jss";
+import styles from "../../styles/graphql/LineChart.module.css";
 
 let parseDate = timeParse("%Y-%m-%d");
 
 let xValue = (d) => d.date;
 let yValue = (d) => d.cases;
-
-// css builder
-const useStyles = createUseStyles((theme) => ({
-	Data: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "space-between",
-	},
-	Title: {
-		display: "flex",
-		justifyContent: "space-between",
-	},
-	CasesSub: {
-		fill: "none",
-		stroke: theme.effect.primary,
-		strokeWidth: "1",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-	},
-	CasesMain: {
-		fill: "none",
-		stroke: theme.palette.primary,
-		strokeWidth: "2",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-	},
-	CasesSubRed: {
-		fill: "none",
-		stroke: theme.effect.secundary,
-		strokeWidth: "1",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-	},
-	CasesMainRed: {
-		fill: "none",
-		stroke: theme.palette.secundary,
-		strokeWidth: "2",
-		strokeLinecap: "round",
-		strokeLinejoin: "round",
-	},
-	Axis: {
-		"& line": {
-			stroke: "rgba(255, 255, 255, 0.1)",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-		},
-
-		"& path": {
-			stroke: "none",
-			strokeWidth: "2",
-			strokeLinecap: "round",
-			strokeLinejoin: "round",
-		},
-		"& text": {
-			fill: theme.palette.text,
-			fontFamily: "'Montserrat', sans-serif",
-			fontSize: "0.75rem",
-			fontWeight: theme.fontWeight.Medium,
-			textDecoration: "none",
-			margin: "none",
-			textAnchor: "left",
-		},
-	},
-}));
 
 export let LineChart = ({
 	data,
@@ -92,10 +28,7 @@ export let LineChart = ({
 	termSub,
 	death = false,
 	t14 = false,
-	props,
 }) => {
-	let classes = useStyles(props);
-
 	let t = !t14 ? 0 : -14;
 
 	let margin = { top: 0, bottom: 20, left: 43, right: -30 };
@@ -182,7 +115,7 @@ export let LineChart = ({
 	return death ? (
 		<svg width={width} height={height}>
 			<g>
-				<g className={classes.Axis}>
+				<g className={styles.axis}>
 					<XAxis
 						xScale={xScale}
 						axisWidth={size.width}
@@ -196,9 +129,9 @@ export let LineChart = ({
 						margin={margin}
 					/>
 				</g>
-				<path className={classes.CasesSubRed} d={lineGenerator(dateDataSub)} />
+				<path className={styles.cases_sub_red} d={lineGenerator(dateDataSub)} />
 				<path
-					className={classes.CasesMainRed}
+					className={styles.cases_main_red}
 					d={lineGenerator(dateDataMain)}
 				/>
 			</g>
@@ -206,7 +139,7 @@ export let LineChart = ({
 	) : (
 		<svg width={width} height={height}>
 			<g>
-				<g className={classes.Axis}>
+				<g className={styles.axis}>
 					<XAxis
 						xScale={xScale}
 						axisWidth={size.width}
@@ -220,8 +153,8 @@ export let LineChart = ({
 						margin={margin}
 					/>
 				</g>
-				<path className={classes.CasesSub} d={lineGenerator(dateDataSub)} />
-				<path className={classes.CasesMain} d={lineGenerator(dateDataMain)} />
+				<path className={styles.cases_sub} d={lineGenerator(dateDataSub)} />
+				<path className={styles.cases_main} d={lineGenerator(dateDataMain)} />
 			</g>
 		</svg>
 	);

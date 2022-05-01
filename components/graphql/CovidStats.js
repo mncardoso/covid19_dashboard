@@ -1,30 +1,10 @@
 import { timeParse, timeFormat, scaleLinear, format } from "d3";
-import { createUseStyles } from "react-jss";
-
-// css builder
-const useStyles = createUseStyles((theme) => ({
-	Data: {
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "space-between",
-		width: "100%",
-	},
-	Title: { "& h3": { color: theme.palette.secundary } },
-	New: {
-		display: "grid",
-		gridTemplateColumns: "1fr 1fr",
-	},
-	RedBG: { fill: theme.effect.secundary },
-	RedFG: { fill: theme.palette.secundary },
-	BlueBG: { fill: theme.effect.primary },
-	BlueFG: { fill: theme.palette.primary },
-}));
+import styles from "../../styles/graphql/CovidStats.module.css";
 
 let parseTime = timeParse("%Y-%m-%d");
 let formatTime = timeFormat("%d/%m/%y");
 
-export let CovidStats = ({ data, isoCode, props }) => {
-	const classes = useStyles(props);
+export let CovidStats = ({ data, isoCode }) => {
 	let isoData = data[isoCode]["data"];
 
 	let day = isoData.map((d) => d["date"]).slice(-1);
@@ -44,15 +24,15 @@ export let CovidStats = ({ data, isoCode, props }) => {
 		.slice(-4, -3);
 
 	return (
-		<div className={classes.Data}>
+		<div className={styles.data}>
 			<p>{date}</p>
 			<div>
-				<div className={classes.Title}>
+				<div className={styles.title}>
 					<p>Reproduction rate</p>
 					<h3>{reproductionRate}</h3>
 				</div>
 			</div>
-			<div className={classes.New}>
+			<div className={styles.new}>
 				<div>
 					<p>New Cases</p>
 					<h3>{format(",.0f")(newCases)}</h3>

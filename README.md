@@ -1,21 +1,27 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/eef4bb91-d234-4c51-8619-83bcaaf46a58/deploy-status)](https://app.netlify.com/sites/covid-dashboard-app/deploys)
 
-# Covid-19 Dashboard build on React with D3.js
+# Covid-19 Dashboard build on React, Next.js and D3.js
 
 This project uses data from [Our World in Data](https://ourworldindata.org/coronavirus).
 
-### `npm init`
+## Available Scripts
 
-to install dependencies
+### `npm i`
 
-### `npm start`
+Installs all dependencies for the project.
+
+### `npm run dev`
 
 Runs the app in the development mode.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### `npm run build`
+### `npm run export`
 
-Builds the app for production to the `./build` folder.
+Builds the app for production to the `out` folder.
 
-This is being deployed to [Netlify](https://www.netlify.com/), but on a diferente reposotory because the "get" command is not working.
+### `netlify dev`
 
-[Deployed website](https://covid-dashboard.app/)
+Runs the app in the development mode.
+Open [http://localhost:8888](http://localhost:8888) with your browser to see the result.
+
+### `netlify build`
