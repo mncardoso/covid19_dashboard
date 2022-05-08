@@ -39,7 +39,7 @@ html {
 body {
 	color: var(--color-text);
 	background-color: var(--color-background);
-	overflow: hidden;
+	/* overflow: hidden; */
 	height: 100vh;
 }
 
@@ -120,9 +120,11 @@ a:active {
 	align-self: center;
 }
 .Menu {
+	grid-row: 1;
 	grid-column: 1;
 }
 .Main {
+	grid-row: 1;
 	grid-column: 2;
 }
 
@@ -131,7 +133,7 @@ a:active {
 	height: 100vh;
 	grid-template-rows: 79px 1fr 1fr 1fr;
 	grid-template-columns: 1fr 1fr 1fr;
-	gap: 1rem;
+	grid-gap: 1rem;
 	padding: 1.5rem 1.5rem 1.5rem 2rem;
 	color: var(--color-text);
 }
@@ -139,11 +141,18 @@ a:active {
 	grid-row: 1;
 	grid-column: 1 / span 3;
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
 	align-items: flex-end;
 	list-style: 0;
+}
+.title > h1 {
+	align-self: flex-start;
+}
+.title > div {
+	align-self: flex-end;
 }
 .cases {
 	grid-row: 2 / span 2;
@@ -166,22 +175,22 @@ a:active {
 	grid-column: 3;
 }
 .section {
-	display: grid;
-	width: 100%;
-	height: 100%;
 	background-color: var(--color-foreground);
 	padding: 1rem;
-	grid-template-columns: auto;
-	grid-template-rows: 1rem 1fr;
-	gap: 1rem;
 	border-radius: 8px;
 }
 
 .content {
-	display: flex;
+	border-radius: 8px;
+	margin-top: 1rem;
+	height: calc(100% - 2rem);
+}
+.content > div {
 	width: 100%;
 	height: 100%;
-	border-radius: 8px;
+}
+.content > svg {
+	object-fit: cover;
 }
 .content h1 {
 	align-self: center;
@@ -195,4 +204,64 @@ a:active {
 	width: 100%;
 	height: 100%;
 	border-radius: 8px;
+}
+.tick text {
+	fill: var(--color-text);
+	font-family: "Montserrat", sans-serif;
+	font-size: 0.75rem;
+	font-weight: var(--font-regular);
+	text-decoration: none;
+	text-anchor: left;
+}
+
+@media screen and (max-width: 768px) {
+	.App {
+		grid-template-rows: 52px 1fr;
+		grid-template-columns: 1fr;
+	}
+	.Menu {
+		grid-row: 1;
+		grid-column: 1;
+	}
+	.Main {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.charts {
+		height: auto;
+		grid-template-rows: auto 250px 250px 250px auto auto;
+		grid-template-columns: 1fr;
+		padding: 1.5rem 2rem;
+	}
+	.title {
+		grid-column: 1;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.title > h1 {
+		font-size: 0;
+	}
+	.title > div {
+		align-self: flex-end;
+	}
+	.cases {
+		grid-row: 2;
+		grid-column: 1;
+	}
+	.lastdays {
+		grid-row: 4;
+		grid-column: 1;
+	}
+	.vaccinations {
+		grid-row: 5;
+		grid-column: 1;
+	}
+	.deaths {
+		grid-row: 3;
+		grid-column: 1;
+	}
+	.stats {
+		grid-row: 6;
+		grid-column: 1;
+	}
 }

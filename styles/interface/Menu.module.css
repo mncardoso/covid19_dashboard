@@ -4,7 +4,7 @@
 	grid-template-columns: 1fr;
 	gap: 1rem;
 	height: 100%;
-	padding: 1.5rem 2rem 1.5rem 2rem;
+	padding: 1.5rem 2rem;
 	background-color: var(--color-foreground);
 }
 
@@ -19,4 +19,20 @@
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+	.menu {
+		grid-template-rows: 1fr;
+		grid-template-columns: 79px 1fr;
+		padding: 0.5rem 2rem;
+	}
+
+	.menu > nav {
+		flex-direction: row;
+	}
+
+	.menu > nav > ul {
+		flex-direction: row;
+	}
 }

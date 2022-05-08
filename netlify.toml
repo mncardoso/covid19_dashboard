@@ -1,0 +1,18 @@
+[build]
+  command = "npm run export"
+  publish = "out"
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ../../"
+
+  ## Uncomment to use this redirect for Single Page Applications like create-react-app.
+  ## Not needed for static site generators.
+  ##[[redirects]]
+  ## from = "/*"
+  ## to = "/index.html"
+  ## status = 200
+
+[build.environment]
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  NODE_VERSION = "17"
+
+[[plugins]]
+package = "@netlify/plugin-local-install-core"

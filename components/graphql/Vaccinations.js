@@ -24,10 +24,10 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 	};
 
 	let vaccinationWidth = {
-		zero: parseFloat(width) * (percentage(vaccinationNum.zero) / 100),
-		one: parseFloat(width) * (percentage(vaccinationNum.one) / 100),
-		two: parseFloat(width) * (percentage(vaccinationNum.two) / 100),
-		three: parseFloat(width) * (percentage(vaccinationNum.three) / 100),
+		zero: `${percentage(vaccinationNum.zero) / 100}%`,
+		one: `${percentage(vaccinationNum.one) / 100}%`,
+		two: `${percentage(vaccinationNum.two) / 100}%`,
+		three: `${percentage(vaccinationNum.three) / 100}%`,
 	};
 
 	let barHeight = 16;
@@ -37,15 +37,15 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 			<div>
 				<div className={styles.title}>
 					<p>0 Vaccines</p>
-					<p>{percentage(vaccinationNum.zero).toFixed(2)}%</p>
+					<p>{percentage(vaccinationNum.zero).toFixed(2) + "%"}</p>
 				</div>
-				<svg width={width} height={barHeight}>
+				<svg width="100%" height={barHeight}>
 					<rect
 						x="0"
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={width}
+						width="100%"
 						height={barHeight}
 						className={styles.red_bg}
 					/>
@@ -54,7 +54,7 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={vaccinationWidth.zero}
+						width={percentage(vaccinationNum.zero).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.red_fg}
 					/>
@@ -63,15 +63,15 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 			<div>
 				<div className={styles.title}>
 					<p>1 Vaccine</p>
-					<p>{percentage(vaccinationNum.one).toFixed(2)}%</p>
+					<p>{percentage(vaccinationNum.one).toFixed(2) + "%"}</p>
 				</div>
-				<svg width={width} height={barHeight}>
+				<svg width="100%" height={barHeight}>
 					<rect
 						x="0"
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={width}
+						width="100%"
 						height={barHeight}
 						className={styles.blue_bg}
 					/>
@@ -80,7 +80,7 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={vaccinationWidth.one}
+						width={percentage(vaccinationNum.one).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.blue_fg}
 					/>
@@ -89,15 +89,15 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 			<div>
 				<div className={styles.title}>
 					<p>2 Vaccines</p>
-					<p>{percentage(vaccinationNum.two).toFixed(2)}%</p>
+					<p>{percentage(vaccinationNum.two).toFixed(2) + "%"}</p>
 				</div>
-				<svg width={width} height={barHeight}>
+				<svg width="100%" height={barHeight}>
 					<rect
 						x="0"
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={width}
+						width="100%"
 						height={barHeight}
 						className={styles.blue_bg}
 					/>
@@ -106,7 +106,7 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={vaccinationWidth.two}
+						width={percentage(vaccinationNum.two).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.blue_fg}
 					/>
@@ -115,15 +115,15 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 			<div>
 				<div className={styles.title}>
 					<p>3 Vaccines</p>
-					<p>{percentage(vaccinationNum.three).toFixed(2)}%</p>
+					<p>{percentage(vaccinationNum.three).toFixed(2) + "%"}</p>
 				</div>
-				<svg width={width} height={barHeight}>
+				<svg width="100%" height={barHeight}>
 					<rect
 						x="0"
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={width}
+						width="100%"
 						height={barHeight}
 						className={styles.blue_bg}
 					/>
@@ -132,7 +132,7 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 						y="0"
 						rx="8px"
 						ry="8px"
-						width={vaccinationWidth.three}
+						width={percentage(vaccinationNum.three).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.blue_fg}
 					/>

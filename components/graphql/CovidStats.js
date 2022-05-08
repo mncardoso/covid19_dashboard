@@ -1,4 +1,4 @@
-import { timeParse, timeFormat, scaleLinear, format } from "d3";
+import { timeParse, timeFormat, format } from "d3";
 import styles from "../../styles/graphql/CovidStats.module.css";
 
 let parseTime = timeParse("%Y-%m-%d");
@@ -19,9 +19,16 @@ export let CovidStats = ({ data, isoCode }) => {
 		.map((d) => (!d["new_deaths"] ? 0 : +d["new_deaths"]))
 		.slice(-1);
 
-	let reproductionRate = isoData
-		.map((d) => (!d["reproduction_rate"] ? 0 : +d["reproduction_rate"]))
-		.slice(-4, -3);
+	let reproductionRate = isoData.map((d) =>
+		!d["reproduction_rate"] ? 0 : +d["reproduction_rate"]
+	);
+	let lastReproductionRateMax;
+	for (let i = reproductionRate.length; i > 0; i -= 1) {
+		if (reproductionRate[i] > 0) {
+			lastReproductionRateMax = reproductionRate[i];
+			break;
+		}
+	}
 
 	return (
 		<div className={styles.data}>
@@ -29,7 +36,7 @@ export let CovidStats = ({ data, isoCode }) => {
 			<div>
 				<div className={styles.title}>
 					<p>Reproduction rate</p>
-					<h3>{reproductionRate}</h3>
+					<h3>{lastReproductionRateMax}</h3>
 				</div>
 			</div>
 			<div className={styles.new}>

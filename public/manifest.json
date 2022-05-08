@@ -1,0 +1,72 @@
+{
+	"background_color": "#1a1a1a",
+	"categories": ["dasboard", "covid-19", "data-visualization"],
+	"description": "A covid dashboard to keep you inform on your desired location.",
+	"display": "standalone",
+	"icons": [
+		{
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/favicon.svg",
+			"type": "image/svg+xml",
+			"sizes": "514x514"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-36x36.png",
+			"type": "image/png",
+			"sizes": "36x36"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-48x48.png",
+			"type": "image/png",
+			"sizes": "48x48"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-72x72.png",
+			"type": "image/png",
+			"sizes": "72x72"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-96x96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-114x114.png",
+			"type": "image/png",
+			"sizes": "114x114"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-192x192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-256x256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-384x384.png",
+			"type": "image/png",
+			"sizes": "384x384"
+		},
+		{
+			"purpose": "maskable",
+			"src": "https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/android-chrome-512x512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		}
+	],
+	"name": "Covid-19 Dashboard",
+	"short_name": "covid",
+	"start_url": "https://covid-dashboard.app/",
+	"theme_color": "#1a1a1a",
+	"scope": "/"
+}
