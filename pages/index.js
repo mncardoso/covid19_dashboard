@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { GetData } from "../components/components/GetData";
-import { IsoMenu } from "../components/interface/IsoMenu";
+import { IsoMenu } from "../components/interface/isoMenu";
 import { CovidStats } from "../components/graphql/CovidStats";
 import { Vaccinations } from "../components/graphql/Vaccinations";
 import { LineChart } from "../components/graphql/LineChart";
