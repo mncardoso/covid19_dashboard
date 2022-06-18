@@ -1,7 +1,7 @@
 import { max, scaleLinear } from "d3";
 import styles from "../../styles/graphql/Vaccinations.module.css";
 
-export let Vaccinations = ({ data, width, isoCode }) => {
+export let Vaccinations = ({ data, isoCode }) => {
 	let isoData = data[isoCode]["data"];
 	let population = data[isoCode]["population"];
 	let dataVax1 = isoData.map((d) =>
@@ -21,13 +21,6 @@ export let Vaccinations = ({ data, width, isoCode }) => {
 		one: max(dataVax1) - max(dataVax2),
 		two: max(dataVax2) - max(dataVax3),
 		three: max(dataVax3),
-	};
-
-	let vaccinationWidth = {
-		zero: `${percentage(vaccinationNum.zero) / 100}%`,
-		one: `${percentage(vaccinationNum.one) / 100}%`,
-		two: `${percentage(vaccinationNum.two) / 100}%`,
-		three: `${percentage(vaccinationNum.three) / 100}%`,
 	};
 
 	let barHeight = 16;

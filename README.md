@@ -18,10 +18,3 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### `npm run export`
 
 Builds the app for production to the `out` folder.
-
-### `netlify dev`
-
-Runs the app in the development mode.
-Open [http://localhost:8888](http://localhost:8888) with your browser to see the result.
-
-### `netlify build`

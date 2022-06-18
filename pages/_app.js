@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-// import "normalize.css/normalize.css";
+import "normalize.css/normalize.css";
 import { SEO } from "../components/seo";
 import { Menu } from "../components/interface/menu";
 

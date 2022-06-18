@@ -12,4 +12,9 @@
 .new {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.status h3 {
+	color: var(--color-text);
 }

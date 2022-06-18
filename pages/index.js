@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import { GetData } from "../components/components/GetData";
 import { IsoMenu } from "../components/interface/isoMenu";
@@ -7,8 +8,12 @@ import { Vaccinations } from "../components/graphql/Vaccinations";
 import { LineChart } from "../components/graphql/LineChart";
 
 let Home = () => {
+	let router = useRouter();
 	let data = GetData();
-	let [isoCode, setIsoCode] = useState("OWID_WRL");
+	let [isoCode, setIsoCode] = useState("WRL");
+	router.query.isoCode = router.query.isoCode
+		? (router.query.isoCode, setIsoCode(router.query.isoCode))
+		: isoCode;
 	let menu = data ? (
 		<IsoMenu
 			options={Object.keys(data)}

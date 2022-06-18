@@ -38,6 +38,8 @@ export let LineChart = ({
 		return { date: date[i], cases: dataMain[i] };
 	});
 
+	console.log(data[isoCode]["population"]);
+
 	let draw = () => {
 		if (d3.select(divID).selectAll("svg").size() > 0) {
 			d3.select(divID).selectAll("svg").remove();

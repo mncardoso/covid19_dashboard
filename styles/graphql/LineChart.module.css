@@ -14,3 +14,16 @@
 	stroke: var(--color-secundary);
 	stroke-width: 2;
 }
+
+.line {
+	stroke: var(--color-secundary);
+	stroke-width: 2;
+}
+
+.line_text {
+	fill: var(--color-secundary);
+	font-size: 0.75rem;
+	font-weight: var(--font-bold);
+	alignment-baseline: middle;
+	font-family: "Montserrat", sans-serif;
+}
