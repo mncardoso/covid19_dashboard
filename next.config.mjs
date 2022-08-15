@@ -13,7 +13,6 @@ function defineNextConfig(config) {
 }
 
 export default defineNextConfig({
-	// staticPageGenerationTimeout: 1000,
 	reactStrictMode: true,
 	swcMinify: true,
 });
