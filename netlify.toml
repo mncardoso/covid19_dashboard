@@ -1,6 +1,5 @@
 [build]
-  command = "npm run export"
-  publish = "out"
+  command = "npm run build"
   ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ../../"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.

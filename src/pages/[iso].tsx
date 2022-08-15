@@ -7,7 +7,7 @@ import next from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-const Iso = (params: { data: DATAinput_Type; date: string }) => {
+const Iso = () => {
 	const router = useRouter();
 	const iso = router.query.iso as string;
 

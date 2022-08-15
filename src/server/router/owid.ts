@@ -1,6 +1,5 @@
 import { env } from "@/env/server.mjs";
 import { createRouter } from "@/server/router/context";
-import { trpc } from "@/utils/trpc";
 import { z } from "zod";
 
 export const owid = createRouter()
