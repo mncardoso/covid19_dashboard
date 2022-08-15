@@ -1,6 +1,6 @@
 {
 	"name": "covid19_dashboard",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "Covid-19 Dashboard build on React, Next.js and D3.js",
 	"private": false,
 	"scripts": {
@@ -8,20 +8,46 @@
 		"build": "cross-env AUTOPREFIXER_GRID=autoplace next build",
 		"start": "next start",
 		"lint": "next lint",
-		"export": "npm run build && next export"
+		"export": "npm run build && next export",
+		"postinstall": "prisma generate"
 	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mncardoso/covid19_dashboard.git"
+	},
+	"author": "Miguel Cardoso",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/mncardoso/covid19_dashboard/issues"
+	},
+	"homepage": "https://covid-dashboard.app/",
 	"dependencies": {
-		"d3": "^7.4.4",
-		"next": "12.1.5",
-		"normalize.css": "^8.0.1",
-		"react": "18.1.0",
-		"react-dom": "18.1.0"
+		"@next-auth/prisma-adapter": "^1.0.4",
+		"@prisma/client": "^4.2.0",
+		"@trpc/client": "^9.27.0",
+		"@trpc/next": "^9.27.0",
+		"@trpc/react": "^9.27.0",
+		"@trpc/server": "^9.27.0",
+		"@types/d3": "^7.4.0",
+		"d3": "^7.6.1",
+		"next": "12.2.3",
+		"next-auth": "^4.10.3",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-query": "^3.39.2",
+		"superjson": "^1.9.1",
+		"zod": "^3.17.3"
 	},
 	"devDependencies": {
-		"autoprefixer": "^10.4.5",
+		"@types/node": "18.0.0",
+		"@types/react": "18.0.14",
+		"@types/react-dom": "18.0.5",
+		"autoprefixer": "^10.4.8",
 		"cross-env": "^7.0.3",
-		"eslint": "8.14.0",
-		"eslint-config-next": "12.1.5"
+		"eslint": "8.18.0",
+		"eslint-config-next": "12.2.3",
+		"prisma": "^4.2.0",
+		"typescript": "4.7.4"
 	},
 	"browserslist": {
 		"production": [
@@ -30,10 +56,9 @@
 			"not op_mini all"
 		],
 		"development": [
-			"last 6 chrome version",
-			"last 6 firefox version",
-			"last 6 safari version",
-			"last 1 ie version"
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
 		]
 	}
 }
