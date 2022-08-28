@@ -18,3 +18,40 @@
 .status h3 {
 	color: var(--color-text);
 }
+
+.status span {
+	padding: 0rem 0.2rem;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2px;
+}
+
+.alert6 {
+	background-color: var(--color-danger);
+	color: var(--color-text);
+}
+.alert5 {
+	background-color: var(--color-danger);
+	color: var(--color-text);
+}
+.alert4 {
+	background-color: var(--color-warning);
+	color: var(--color-text-alt);
+}
+.alert3 {
+	background-color: var(--color-warning);
+	color: var(--color-text-alt);
+}
+.alert2 {
+	background-color: var(--color-warning);
+	color: var(--color-text-alt);
+}
+.alert1 {
+	background-color: var(--color-success);
+	color: var(--color-foreground);
+}
+.alert0 {
+	background-color: var(--color-success);
+	color: var(--color-foreground);
+}

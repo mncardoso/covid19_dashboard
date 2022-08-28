@@ -109,7 +109,6 @@ const PARSE_Validator = z.map(
 export type PARSE_Type = z.infer<typeof PARSE_Validator>;
 
 const DATAinput_Validator = z.object({
-	isoCode: z.string().length(3),
 	location: z.string(),
 	population: z.number(),
 	data: z.array(
@@ -152,10 +151,7 @@ const DATA_Validator = z
 			),
 			dateFromat: z.enum(["%m/%y", "%d"]).optional(),
 			id: z.enum(["new_cases", "last_days", "new_deaths"]).optional(),
-			termMain: z
-				.enum(["new_cases_smoothed", "new_deaths_smoothed"])
-				.optional(),
-			termSub: z.enum(["new_cases", "new_deaths"]).optional(),
+			term: z.enum(["new_cases", "new_deaths"]).optional(),
 			death: z.boolean().optional(),
 			t14: z.boolean().optional(),
 			serverDate: z.string().optional(),
@@ -184,8 +180,7 @@ const LINE_Validator = z
 			),
 			dateFromat: z.enum(["%m/%y", "%d"]),
 			id: z.enum(["new_cases", "last_days", "new_deaths"]),
-			termMain: z.enum(["new_cases_smoothed", "new_deaths_smoothed"]),
-			termSub: z.enum(["new_cases", "new_deaths"]),
+			term: z.enum(["new_cases", "new_deaths"]),
 			death: z.boolean().optional(),
 			t14: z.boolean().optional(),
 		})

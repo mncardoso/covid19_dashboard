@@ -1,5 +1,6 @@
 // src/pages/_app.tsx
 import { SEO } from "@/components/SEO";
+import { MenuBar } from "@/layout/MenuBar";
 import type { AppRouter } from "@/server/router";
 import "@/styles/globals.css";
 import { withTRPC } from "@trpc/next";
@@ -10,6 +11,7 @@ const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
 	return (
 		<>
 			<SEO />
+			<MenuBar />
 			<Component {...pageProps} />
 		</>
 	);

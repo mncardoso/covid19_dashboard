@@ -34,8 +34,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width="100%"
 						height={barHeight}
 						className={styles.red_bg}
@@ -43,8 +43,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width={percentage(vaccinationNum.zero).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.red_fg}
@@ -60,8 +60,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width="100%"
 						height={barHeight}
 						className={styles.blue_bg}
@@ -69,8 +69,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width={percentage(vaccinationNum.one).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.blue_fg}
@@ -86,8 +86,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width="100%"
 						height={barHeight}
 						className={styles.blue_bg}
@@ -95,8 +95,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width={percentage(vaccinationNum.two).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.blue_fg}
@@ -112,8 +112,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="6px"
+						ry="6px"
 						width="100%"
 						height={barHeight}
 						className={styles.blue_bg}
@@ -121,8 +121,8 @@ export const Vaccinations: DATA_Function = ({ data, population }) => {
 					<rect
 						x="0"
 						y="0"
-						rx="8px"
-						ry="8px"
+						rx="4px"
+						ry="4px"
 						width={percentage(vaccinationNum.three).toFixed(2) + "%"}
 						height={barHeight}
 						className={styles.blue_fg}

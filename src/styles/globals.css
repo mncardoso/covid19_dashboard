@@ -1,22 +1,22 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;800&display=swap");
 
 :root {
 	/* Colors */
 	--color-foreground: hsl(0, 0%, 25%);
+	--color-foreground-alpha: hsl(0, 0%, 50%, 0.251);
 	--color-background: hsl(0, 0%, 10%);
 	--color-primary: hsl(243, 99%, 71%);
 	--color-primary-alpha: hsla(243, 99%, 71%, 0.251);
 	--color-secundary: hsl(11, 100%, 50%);
 	--color-secundary-alpha: hsla(11, 100%, 50%, 0.25);
 	--color-text: hsl(300, 33%, 99%);
+	--color-text-alt: hsl(300, 33%, 1%);
 
-	--color-info: #4bb1cf;
-	--color-danger: #ed4f32;
-	--color-primary: #288feb;
-	--color-success: #15cd72;
-	--color-warning: #ede04d;
-	--color-muted: #ececec;
+	--color-danger: hsl(9, 84%, 56%);
+	--color-warning: hsl(55, 82%, 62%);
+	--color-success: hsl(150, 81%, 44%);
 
 	/* Margins */
 	--pading: 32px;
@@ -25,6 +25,7 @@
 	/* Fonts */
 	font-size: 16px;
 	--font-thin: 100;
+	--font-extra-light: 200;
 	--font-light: 300;
 	--font-regular: 400;
 	--font-medium: 500;
@@ -46,8 +47,9 @@ html {
 body {
 	color: var(--color-text);
 	background-color: var(--color-background);
-	/* overflow: hidden; */
+	overflow: hidden;
 	height: 100vh;
+	width: 100vw;
 }
 
 h1,
@@ -61,43 +63,67 @@ span {
 }
 
 h1 {
-	font-family: "Montserrat", sans-serif;
-	font-size: 2rem;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1.802rem;
 	font-weight: var(--font-extra-bold);
 	margin: none;
-	line-height: 1.2;
+	line-height: 1.3;
 }
 
 h2 {
-	font-family: "Montserrat", sans-serif;
-	font-size: 1rem;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1.602rem;
 	font-weight: var(--font-extra-bold);
 	margin: none;
-	line-height: 1.2;
+	line-height: 1.3;
 }
 
 h3 {
-	font-family: "Montserrat", sans-serif;
-	font-size: 1.5rem;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1.424rem;
 	font-weight: var(--font-extra-bold);
 	margin: none;
-	line-height: 1.2;
+	line-height: 1.3;
+}
+
+h4 {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1.266rem;
+	font-weight: var(--font-extra-bold);
+	margin: none;
+	line-height: 1.3;
+}
+
+h5 {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1.125rem;
+	font-weight: var(--font-extra-bold);
+	margin: none;
+	line-height: 1.3;
+}
+
+h6 {
+	font-family: "Noto Sans", sans-serif;
+	font-size: 0.889rem;
+	font-weight: var(--font-extra-light);
+	margin: none;
+	line-height: 1.3;
 }
 
 p {
-	font-family: "Montserrat", sans-serif;
-	font-size: 0.75rem;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1rem;
 	font-weight: var(--font-regular);
 	margin: none;
-	line-height: 1.2;
+	line-height: 1.3;
 }
 
 a {
-	font-family: "Montserrat", sans-serif;
-	font-size: 0.75rem;
+	font-family: "Noto Sans", sans-serif;
+	font-size: 1rem;
 	font-weight: var(--font-regular);
 	margin: none;
-	line-height: 1.2;
+	line-height: 1.3;
 }
 
 a:link,
@@ -138,10 +164,10 @@ a:active {
 .charts {
 	display: grid;
 	height: 100vh;
-	grid-template-rows: 79px 1fr 1fr 1fr;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 70px 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 350px;
 	grid-gap: 1rem;
-	padding: 1.5rem 1.5rem 1.5rem 2rem;
+	padding: 1.5rem;
 	color: var(--color-text);
 }
 .title {
@@ -154,12 +180,6 @@ a:active {
 	height: 100%;
 	align-items: flex-end;
 	list-style: 0;
-}
-.title > h1 {
-	align-self: flex-start;
-}
-.title > div {
-	align-self: flex-end;
 }
 .cases {
 	grid-row: 2 / span 2;
@@ -184,13 +204,13 @@ a:active {
 .section {
 	background-color: var(--color-foreground);
 	padding: 1rem;
-	border-radius: 8px;
+	border-radius: 2px;
 }
 
 .content {
 	border-radius: 8px;
 	margin-top: 1rem;
-	height: calc(100% - 2rem);
+	height: calc(100% - 3rem);
 }
 .content > div {
 	width: 100%;
@@ -214,7 +234,7 @@ a:active {
 }
 .tick text {
 	fill: var(--color-text);
-	font-family: "Montserrat", sans-serif;
+	font-family: "Noto Sans", sans-serif;
 	font-size: 0.75rem;
 	font-weight: var(--font-regular);
 	text-decoration: none;
@@ -243,10 +263,14 @@ a:active {
 }
 
 @media screen and (max-width: 768px) {
+	body {
+		overflow: auto;
+	}
 	.App {
 		grid-template-rows: 52px 1fr;
 		grid-template-columns: 1fr;
 	}
+
 	.Menu {
 		grid-row: 1;
 		grid-column: 1;
@@ -257,7 +281,7 @@ a:active {
 	}
 	.charts {
 		height: auto;
-		grid-template-rows: auto 250px 250px 250px auto auto;
+		grid-template-rows: auto auto auto 250px 250px 250px;
 		grid-template-columns: 1fr;
 		padding: 1.5rem 2rem;
 	}

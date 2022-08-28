@@ -1,0 +1,6 @@
+.cases {
+	fill: var(--color-primary);
+}
+.cases_red {
+	fill: var(--color-secundary);
+}
