@@ -21,10 +21,6 @@
 	},
 	"homepage": "https://covid-dashboard.app/",
 	"dependencies": {
-		"@trpc/client": "^9.27.0",
-		"@trpc/next": "^9.27.0",
-		"@trpc/react": "^9.27.0",
-		"@trpc/server": "^9.27.0",
 		"@types/d3": "^7.4.0",
 		"@types/p5": "^1.4.2",
 		"aws-sdk": "^2.1205.0",
