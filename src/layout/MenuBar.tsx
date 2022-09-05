@@ -1,6 +1,5 @@
 import styles from "@/layout/styles/MenuBar.module.css";
 import React from "react";
-import { any } from "zod";
 import { DropDown } from "./DropDown";
 
 export const MenuBar = ({ data }: any) => {
@@ -8,7 +7,7 @@ export const MenuBar = ({ data }: any) => {
 	const onClick = () => {
 		setMenuState(!menuState);
 	};
-	let style = !menuState ? styles.subMenuClose : styles.subMenuOpen;
+	const style = !menuState ? styles.subMenuClose : styles.subMenuOpen;
 	return (
 		<div className={styles.menuBar}>
 			<div className={styles.button} onClick={onClick}>

@@ -1,5 +1,6 @@
-const baseURL =
-	"https://s3.eu-north-1.amazonaws.com/web.mc/assets.dashboard/favicons/";
+import { env } from "@/env/client.mjs";
+
+const baseURL = env.NEXT_PUBLIC_ICON_URL;
 
 export const MetaData = {
 	title: "Covid-19 Dashboard",

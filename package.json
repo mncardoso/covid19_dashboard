@@ -7,8 +7,7 @@
 		"dev": "cross-env AUTOPREFIXER_GRID=autoplace next dev",
 		"build": "cross-env AUTOPREFIXER_GRID=autoplace next build",
 		"start": "next start",
-		"lint": "next lint",
-		"export": "npm run build && next export"
+		"lint": "next lint"
 	},
 	"repository": {
 		"type": "git",
@@ -22,16 +21,10 @@
 	"homepage": "https://covid-dashboard.app/",
 	"dependencies": {
 		"@types/d3": "^7.4.0",
-		"@types/p5": "^1.4.2",
-		"aws-sdk": "^2.1205.0",
-		"axios": "^0.27.2",
 		"d3": "^7.6.1",
 		"next": "12.2.5",
-		"p5": "^1.4.2",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"react-p5": "^1.3.30",
-		"react-query": "^3.39.2",
 		"superjson": "^1.9.1",
 		"zod": "^3.18.0"
 	},

@@ -18,11 +18,11 @@ const Iso = (props: {
 		people_fully_vaccinated: number;
 		total_boosters: number;
 	}[];
-	menuData: any;
+	menuData: unknown;
 }) => {
 	return (
 		<div>
-			<Head>
+			{/* <Head>
 				<title>{`Covid Dashboard | ${props.location}`}</title>
 			</Head>
 			<MenuBar data={props.menuData} />
@@ -87,30 +87,30 @@ const Iso = (props: {
 						<Vaccinations data={props.data} population={props.population} />
 					</div>
 				</div>
-			</main>
+			</main> */}
 		</div>
 	);
 };
 
 export default Iso;
 
-export async function getStaticPaths() {
-	const response = await fetch("https://covid-dashboard.app/api/owid");
-	const data = await response.json();
-	const paths = Object.keys(data).map((iso: string) => ({
-		params: { iso: iso },
-	}));
-	return { paths, fallback: "blocking" };
-}
+// export async function getStaticPaths() {
+// 	const response = await fetch("https://covid-dashboard.app/api");
+// 	const data = await response.json();
+// 	const paths = Object.keys(data).map((iso: string) => ({
+// 		params: { iso: iso },
+// 	}));
+// 	return { paths, fallback: "blocking" };
+// }
 
-export async function getStaticProps({ params }: { params: { iso: string } }) {
-	const response = await fetch("https://covid-dashboard.app/api/owid");
-	const menuData = await response.json();
-	const location = menuData[params.iso]?.location;
-	const population = menuData[params.iso]?.population;
-	const responseISO = await fetch(
-		`https://covid-dashboard.app/api/owid/${params.iso}`
-	);
-	const data = await responseISO.json();
-	return { props: { location, population, data, menuData }, revalidate: 3600 };
-}
+// export async function getStaticProps({ params }: { params: { iso: string } }) {
+// 	const response = await fetch("https://covid-dashboard.app/api");
+// 	const menuData = await response.json();
+// 	const location = menuData[params.iso]?.location;
+// 	const population = menuData[params.iso]?.population;
+// 	const responseISO = await fetch(
+// 		`https://covid-dashboard.app/api/${params.iso}`
+// 	);
+// 	const data = await responseISO.json();
+// 	return { props: { location, population, data, menuData }, revalidate: 3600 };
+// }

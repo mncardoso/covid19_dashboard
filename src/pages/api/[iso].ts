@@ -1,6 +1,5 @@
-import { NextApiRequest, NextApiResponse } from "next";
-
 import { env } from "@/env/server.mjs";
+import { NextApiRequest, NextApiResponse } from "next";
 
 const data = async (iso: string | string[] | undefined) => {
 	const response = await fetch(env.DATA_URL + iso + ".json");
