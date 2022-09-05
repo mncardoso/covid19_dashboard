@@ -66,5 +66,5 @@ const FUNCTION_Validator = z
 			t14: z.boolean().optional(),
 		})
 	)
-	.returns(z.unknown());
+	.returns(z.any());
 export type FUNCTION_Type = z.infer<typeof FUNCTION_Validator>;

@@ -4,28 +4,25 @@ import { Vaccinations } from "@/components/graphs/Vaccinations";
 import { MenuBar } from "@/layout/MenuBar";
 import Head from "next/head";
 
-const Iso = () =>
-	// 	props: {
-	// 	location: string;
-	// 	population: number;
-	// 	data: {
-	// 		new_cases: number;
-	// 		new_deaths: number;
-	// 		date: string;
-	// 		new_cases_smoothed: number;
-	// 		new_deaths_smoothed: number;
-	// 		reproduction_rate: number;
-	// 		people_vaccinated: number;
-	// 		people_fully_vaccinated: number;
-	// 		total_boosters: number;
-	// 	}[];
-	// 	menuData: unknown;
-	// }
-	{
-		return (
-			<div>
-				<p>API</p>
-				{/* <Head>
+const Iso = (props: {
+	location: string;
+	population: number;
+	data: {
+		new_cases: number;
+		new_deaths: number;
+		date: string;
+		new_cases_smoothed: number;
+		new_deaths_smoothed: number;
+		reproduction_rate: number;
+		people_vaccinated: number;
+		people_fully_vaccinated: number;
+		total_boosters: number;
+	}[];
+	menuData: unknown;
+}) => {
+	return (
+		<div>
+			<Head>
 				<title>{`Covid Dashboard | ${props.location}`}</title>
 			</Head>
 			<MenuBar data={props.menuData} />
@@ -90,30 +87,30 @@ const Iso = () =>
 						<Vaccinations data={props.data} population={props.population} />
 					</div>
 				</div>
-			</main> */}
-			</div>
-		);
-	};
+			</main>
+		</div>
+	);
+};
 
 export default Iso;
 
-// export async function getStaticPaths() {
-// 	const response = await fetch("https://covid-dashboard.app/api");
-// 	const data = await response.json();
-// 	const paths = Object.keys(data).map((iso: string) => ({
-// 		params: { iso: iso },
-// 	}));
-// 	return { paths, fallback: "blocking" };
-// }
+export async function getStaticPaths() {
+	const response = await fetch("https://covid-dashboard.app/api");
+	const data = await response.json();
+	const paths = Object.keys(data).map((iso: string) => ({
+		params: { iso: iso },
+	}));
+	return { paths, fallback: "blocking" };
+}
 
-// export async function getStaticProps({ params }: { params: { iso: string } }) {
-// 	const response = await fetch("https://covid-dashboard.app/api");
-// 	const menuData = await response.json();
-// 	const location = menuData[params.iso]?.location;
-// 	const population = menuData[params.iso]?.population;
-// 	const responseISO = await fetch(
-// 		`https://covid-dashboard.app/api/${params.iso}`
-// 	);
-// 	const data = await responseISO.json();
-// 	return { props: { location, population, data, menuData }, revalidate: 3600 };
-// }
+export async function getStaticProps({ params }: { params: { iso: string } }) {
+	const response = await fetch("https://covid-dashboard.app/api");
+	const menuData = await response.json();
+	const location = menuData[params.iso]?.location;
+	const population = menuData[params.iso]?.population;
+	const responseISO = await fetch(
+		`https://covid-dashboard.app/api/${params.iso}`
+	);
+	const data = await responseISO.json();
+	return { props: { location, population, data, menuData }, revalidate: 3600 };
+}
