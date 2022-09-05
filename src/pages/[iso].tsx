@@ -4,25 +4,28 @@ import { Vaccinations } from "@/components/graphs/Vaccinations";
 import { MenuBar } from "@/layout/MenuBar";
 import Head from "next/head";
 
-const Iso = (props: {
-	location: string;
-	population: number;
-	data: {
-		new_cases: number;
-		new_deaths: number;
-		date: string;
-		new_cases_smoothed: number;
-		new_deaths_smoothed: number;
-		reproduction_rate: number;
-		people_vaccinated: number;
-		people_fully_vaccinated: number;
-		total_boosters: number;
-	}[];
-	menuData: unknown;
-}) => {
-	return (
-		<div>
-			{/* <Head>
+const Iso = () =>
+	// 	props: {
+	// 	location: string;
+	// 	population: number;
+	// 	data: {
+	// 		new_cases: number;
+	// 		new_deaths: number;
+	// 		date: string;
+	// 		new_cases_smoothed: number;
+	// 		new_deaths_smoothed: number;
+	// 		reproduction_rate: number;
+	// 		people_vaccinated: number;
+	// 		people_fully_vaccinated: number;
+	// 		total_boosters: number;
+	// 	}[];
+	// 	menuData: unknown;
+	// }
+	{
+		return (
+			<div>
+				<p>API</p>
+				{/* <Head>
 				<title>{`Covid Dashboard | ${props.location}`}</title>
 			</Head>
 			<MenuBar data={props.menuData} />
@@ -88,9 +91,9 @@ const Iso = (props: {
 					</div>
 				</div>
 			</main> */}
-		</div>
-	);
-};
+			</div>
+		);
+	};
 
 export default Iso;
 

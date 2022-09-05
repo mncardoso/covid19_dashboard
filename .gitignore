@@ -4,6 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
+/package-lock.json
 
 # testing
 /coverage
@@ -38,3 +39,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# Local Netlify folder
+.netlify

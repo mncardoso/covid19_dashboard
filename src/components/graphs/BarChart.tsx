@@ -1,6 +1,6 @@
 // @ts-nocheck
 import styles from "@/components/graphs/styles/BarChart.module.css";
-import { LINE_Function } from "@/types/types";
+import { FUNCTION_Type } from "@/types/types";
 import * as d3 from "d3";
 
 const parseDate = d3.timeParse("%Y-%m-%d");
@@ -8,7 +8,7 @@ const parseDate = d3.timeParse("%Y-%m-%d");
 const xValue = (d: any) => d.date;
 const yValue = (d: any) => d.cases;
 
-export const BarChart: LINE_Function = ({
+export const BarChart: FUNCTION_Type = ({
 	data, // data for graph
 	population,
 	dateFromat, // date format
@@ -24,7 +24,8 @@ export const BarChart: LINE_Function = ({
 
 	// > compute data
 	const dataReverse = data.reverse();
-	let dataAverage: { date: any; new_cases: number; new_deaths: number }[] = [];
+	const dataAverage: { date: any; new_cases: number; new_deaths: number }[] =
+		[];
 	let days,
 		cases,
 		deaths = 0;
@@ -73,7 +74,7 @@ export const BarChart: LINE_Function = ({
 
 	// console.log(t14 ? xValues : "no");
 
-	let draw = () => {
+	const draw = () => {
 		const divID = document?.getElementById(id);
 
 		if (d3.select(divID).selectAll("svg").size() > 0) {

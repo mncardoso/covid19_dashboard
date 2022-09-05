@@ -1,11 +1,11 @@
 import styles from "@/components/graphs/styles/CovidStats.module.css";
-import { DATA_Function } from "@/types/types";
+import { FUNCTION_Type } from "@/types/types";
 import * as d3 from "d3";
 
 const parseTime = d3.timeParse("%Y-%m-%d");
 const formatTime = d3.timeFormat("%d/%m/%y");
 
-export const CovidStats: DATA_Function = ({ data, population }) => {
+export const CovidStats: FUNCTION_Type = ({ data, population }) => {
 	const day = data.map((d) => d.date).slice(-1)[0];
 	const dayParse = day ? parseTime(day) : null;
 	const date = dayParse ? formatTime(dayParse) : null;

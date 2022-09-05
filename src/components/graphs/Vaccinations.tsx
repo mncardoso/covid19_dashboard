@@ -1,9 +1,9 @@
 // @ts-nocheck
 import styles from "@/components/graphs/styles/Vaccinations.module.css";
-import { DATA_Function } from "@/types/types";
+import { FUNCTION_Type } from "@/types/types";
 import * as d3 from "d3";
 
-export const Vaccinations: DATA_Function = ({ data, population }) => {
+export const Vaccinations: FUNCTION_Type = ({ data, population }) => {
 	const dataVax1 = data.map((d) =>
 		!d.people_vaccinated ? 0 : d.people_vaccinated
 	);
