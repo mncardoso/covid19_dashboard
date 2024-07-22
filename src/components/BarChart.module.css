@@ -1,0 +1,6 @@
+.cases {
+  fill: var(--color-accent);
+}
+.cases_red {
+  fill: var(--color-danger);
+}

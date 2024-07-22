@@ -1,55 +1,30 @@
 {
-	"name": "covid19_dashboard",
-	"version": "3.0.0",
-	"description": "Covid-19 Dashboard build on React, Next.js and D3.js",
-	"private": false,
-	"scripts": {
-		"dev": "cross-env AUTOPREFIXER_GRID=autoplace next dev",
-		"build": "cross-env AUTOPREFIXER_GRID=autoplace next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/mncardoso/covid19_dashboard.git"
-	},
-	"author": "Miguel Cardoso",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/mncardoso/covid19_dashboard/issues"
-	},
-	"homepage": "https://covid-dashboard.app/",
-	"dependencies": {
-		"@types/d3": "^7.4.0",
-		"d3": "^7.6.1",
-		"next": "12.2.5",
-		"react": "18.2.0",
-		"react-dom": "18.2.0",
-		"superjson": "^1.9.1",
-		"zod": "^3.18.0"
-	},
-	"devDependencies": {
-		"@types/node": "18.0.0",
-		"@types/react": "18.0.14",
-		"@types/react-dom": "18.0.5",
-		"@typescript-eslint/eslint-plugin": "^5.33.0",
-		"@typescript-eslint/parser": "^5.33.0",
-		"autoprefixer": "^10.4.8",
-		"cross-env": "^7.0.3",
-		"eslint": "8.22.0",
-		"eslint-config-next": "12.2.5",
-		"typescript": "4.7.4"
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
-	}
+  "name": "covid19_dashboard",
+  "version": "4.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "d3": "7.9.0",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "zod": "3.23.8"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "4.3.0",
+    "@types/d3": "7.4.3",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
+    "prettier": "3.3.2",
+    "prettier-plugin-css-order": "2.1.2",
+    "typescript": "^5"
+  }
 }

@@ -1,0 +1,23 @@
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+.red_bg {
+  fill: var(--color-danger-background);
+}
+.red_fg {
+  fill: var(--color-danger);
+}
+.blue_bg {
+  fill: var(--color-accent-background);
+}
+.blue_fg {
+  fill: var(--color-accent);
+}

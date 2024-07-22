@@ -4,14 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-/package-lock.json
+.yarn/install-state.gz
 
 # testing
 /coverage
-
-# database
-/prisma/db.sqlite
-/prisma/db.sqlite-journal
 
 # next.js
 /.next/
@@ -28,10 +24,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # local env files
-.env
 .env*.local
 
 # vercel
@@ -39,6 +33,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-# Local Netlify folder
-.netlify
+next-env.d.ts

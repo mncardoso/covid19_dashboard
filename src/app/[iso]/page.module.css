@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--padding);
+  width: 100%;
+}
+
+.main svg {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: var(--padding);
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border-radius: var(--border-radius);
+  background-color: var(--color-neutral-subtle);
+  padding: var(--padding);
+  width: 100%;
+  height: 100%;
+}
+
+.warning {
+  background-color: var(--color-danger-background);
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: calc(var(--top-margin) - var(--padding));
+}
+
+.title a {
+  margin: none;
+  color: var(--color-neutral-muted);
+  font-weight: var(--font-extra-bold);
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+  text-decoration: none;
+}
+
+.titleCard {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  border-radius: 10px;
+  border-radius: var(--border-radius);
+  padding: var(--padding);
+  width: 100%;
+  height: 100%;
+}
+.titleCard h1 {
+  line-height: 2.25rem;
+}
+
+.spacer {
+  height: calc(var(--top-margin) - var(--padding));
+}
