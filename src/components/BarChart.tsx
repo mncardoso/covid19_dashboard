@@ -131,8 +131,7 @@ export const BarChart: type_barChart = ({
     // > draw
     svg
       .attr('viewBox', `0 0 ${width} ${height}`)
-      .attr('width', width)
-      .attr('height', height)
+      .attr('preserveAspectRatio', 'xMidYMid meet')
       .attr('fill', 'none')
       .attr('strokeLinecap', 'round')
       .attr('strokeLinejoin', 'round');

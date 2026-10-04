@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import { Inter } from 'next/font/google';
 import React from 'react';
@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   description: 'A covid dashboard to keep you inform on your desired location.',
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const revalidate = 3600; // revalidate at most every hour
 
 export default async function RootLayout({
@@ -22,8 +27,8 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={'container'}>
-          <main className={'main'}>{children}</main>
+        <div className="container">
+          <main className="main">{children}</main>
         </div>
       </body>
     </html>

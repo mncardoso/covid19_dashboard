@@ -9,9 +9,5 @@ export function getCountriesByContinent({
   data: type_locations;
   continent: continents;
 }) {
-  return Array.from(data.keys())
-    .map(iso => {
-      return data?.get(iso)?.continent === continent ? data?.get(iso) : null;
-    })
-    .filter(Boolean);
+  return Array.from(data.values()).filter(country => country.continent === continent);
 }

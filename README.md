@@ -1,6 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/eef4bb91-d234-4c51-8619-83bcaaf46a58/deploy-status)](https://app.netlify.com/sites/covid-dashboard-app/deploys)
 
-# Covid-19 Dashboard build on React, Next.js and D3.js
+# Covid-19 Dashboard — Next.js 16, React 19, D3.js
 
 This project uses data from [Our World in Data](https://ourworldindata.org/coronavirus).
 
@@ -12,9 +12,9 @@ Installs all dependencies for the project.
 
 ### `pnpm run dev`
 
-Runs the app in the development mode.
+Runs the app in development mode.
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### `pnpm run export`
+### `pnpm run build`
 
-Builds the app for production to the `out` folder.
+Builds the app for production.

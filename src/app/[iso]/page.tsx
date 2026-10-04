@@ -1,7 +1,8 @@
-import { getData, getLocations } from '@/api';
+import Link from 'next/link';
 import * as d3 from 'd3';
 import { Suspense } from 'react';
 
+import { getData, getLocations } from '@/api';
 import { BarChart } from '@/components/BarChart';
 import { CovidStats } from '@/components/CovidStats';
 import { Vaccinations } from '@/components/Vaccinations';
@@ -10,11 +11,11 @@ import styles from './page.module.css';
 
 const formatTime = d3.timeFormat('%d/%m/%Y');
 
-export default async function Page({ params }: { params: { iso: string } }) {
-  const { iso } = params;
+export default async function Page({ params }: { params: Promise<{ iso: string }> }) {
+  const { iso } = await params;
 
   const location = await getLocations().then(res => res.get(iso));
-  if (!location) return <p>Loading...</p>;
+  if (!location) return <p>Location not found</p>;
 
   const data = await getData(iso);
 
@@ -24,12 +25,14 @@ export default async function Page({ params }: { params: { iso: string } }) {
     <div className={styles.main}>
       <Suspense fallback={<div>Loading...</div>}>
         <div className={styles.title}>
-          <a href={`/`}>🏠</a>
+          <Link href="/" aria-label="Home">
+            🏠
+          </Link>
           <div className={styles.titleCard}>
             <h1>{location.location}</h1>
           </div>
         </div>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.containerSingle}`}>
           <div className={`${styles.card} ${styles.warning}`}>
             <h3>Attention!</h3>
             <p>
@@ -59,7 +62,7 @@ export default async function Page({ params }: { params: { iso: string } }) {
             />
           </div>
         </div>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.containerSingle}`}>
           <div className={styles.card}>
             <h3>Covid Cases (daily average per week)</h3>
             <BarChart
@@ -70,7 +73,7 @@ export default async function Page({ params }: { params: { iso: string } }) {
             />
           </div>
         </div>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${styles.containerSingle}`}>
           <div className={styles.card}>
             <h3>Covid Deaths (daily average per week)</h3>
             <BarChart
